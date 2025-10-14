@@ -1,0 +1,182 @@
+.education {
+  padding: 4.5rem 2rem;
+  background-color: white;
+}
+
+.education__container {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.education__header {
+  text-align: center;
+  margin-bottom: 4rem;
+}
+
+.education-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.education-item {
+  padding: 1.5rem 0;
+  border-bottom: 1px solid #e9ecef;
+  transition: all 0.3s ease;
+}
+
+.education-item:last-child {
+  border-bottom: none;
+}
+
+.education-item:hover {
+  background-color: #fafafa;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  margin-left: -1rem;
+  margin-right: -1rem;
+  border-radius: 8px;
+}
+
+/* Highlight bachelor's degree */
+.education-item.bachelor {
+  background: linear-gradient(135deg, #fff9f3 0%, #ffffff 100%);
+  border-left: 4px solid #ff6b35;
+  padding-left: 1.5rem;
+  margin-left: -1.5rem;
+}
+
+.education-item.bachelor:hover {
+  background: linear-gradient(135deg, #fff5eb 0%, #fafafa 100%);
+}
+
+
+
+.education-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 0.5rem;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.education-title {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #1a1a1a;
+  margin: 0;
+  flex: 1;
+  min-width: 120px;
+  line-height: 1.2;
+}
+
+.education-period {
+  background-color: #ff6b35;
+  color: white;
+  padding: 0.2rem 0.6rem;
+  border-radius: 0.75rem;
+  font-size: 0.65rem;
+  font-weight: 600;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+.education-school {
+  font-size: 1rem;
+  font-weight: 600;
+  color: #444;
+  margin: 0 0 0.75rem 0;
+}
+
+.education-gpa {
+  margin-bottom: 0.75rem;
+  color: #ff6b35;
+  font-size: 0.85rem;
+}
+
+.education-section {
+  margin-bottom: 0.75rem;
+}
+
+.education-section:last-child {
+  margin-bottom: 0;
+}
+
+.education-section-title {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: #1a1a1a;
+  margin-bottom: 0.5rem;
+  border-bottom: 1px solid #f1f3f4;
+  padding-bottom: 0.2rem;
+}
+
+.coursework-list {
+  list-style: disc;
+  padding-left: 1rem;
+  margin: 0;
+  color: #333;
+}
+
+.coursework-list li {
+  margin-bottom: 0.25rem;
+  font-size: 0.8rem;
+  line-height: 1.4;
+}
+
+
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (max-width: 768px) {
+  .education {
+    padding: 4rem 1.5rem;
+  }
+  
+  .education-grid {
+    gap: 1.5rem;
+  }
+  
+  .education-row.bachelor-row {
+    grid-template-columns: 1fr;
+  }
+  
+  .education-row.other-schools {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+  
+  .education-card {
+    padding: 1rem;
+    min-height: 180px;
+  }
+  
+  .education-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.5rem;
+  }
+  
+  .education-title {
+    font-size: 1rem;
+    min-width: unset;
+  }
+  
+  .education-icon {
+    font-size: 1.3rem;
+  }
+  
+  .education-school {
+    font-size: 0.9rem;
+  }
+}

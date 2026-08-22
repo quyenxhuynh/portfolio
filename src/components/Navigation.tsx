@@ -52,19 +52,27 @@ const Navigation: React.FC<NavigationProps> = ({ items }) => {
 
     const observer = new IntersectionObserver(
       (entries) => {
-        const mostVisibleEntry = entries
-          .filter((entry) => entry.isIntersecting)
-          .sort((a, b) => b.intersectionRatio - a.intersectionRatio)[0];
+        let bestEntry: IntersectionObserverEntry | null = null;
 
-        if (mostVisibleEntry?.target?.id) {
-          const nextActiveSection = mostVisibleEntry.target.id;
+        for (const entry of entries) {
+          if (!entry.isIntersecting) {
+            continue;
+          }
+
+          if (!bestEntry || entry.intersectionRatio > bestEntry.intersectionRatio) {
+            bestEntry = entry;
+          }
+        }
+
+        if (bestEntry?.target?.id) {
+          const nextActiveSection = bestEntry.target.id;
           setActiveSection((prev) => (prev === nextActiveSection ? prev : nextActiveSection));
         }
       },
       {
         root: null,
-        rootMargin: '-45% 0px -45% 0px',
-        threshold: [0, 0.25, 0.5, 0.75, 1],
+        rootMargin: '-42% 0px -42% 0px',
+        threshold: [0.25, 0.6],
       },
     );
 

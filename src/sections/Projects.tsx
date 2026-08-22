@@ -9,7 +9,7 @@ const Projects: React.FC = () => {
     {
       id: '1',
       title: 'Card Simulator',
-      description: 'A web-based card game simulator built with Electron, React, and TypeScript. Features include tracking card statistics and user performance.',
+      description: 'Desktop card-game simulator with gameplay analytics and performance tracking.',
       technologies: ['React', 'TypeScript', 'Vite', 'Tailwind CSS', 'Mantine UI'],
       // githubUrl: 'https://github.com/quyenxhuynh/electron-forge-template',
       imageUrl: imagePath('card-simulation.png'),
@@ -18,7 +18,7 @@ const Projects: React.FC = () => {
     {
       id: '2',
       title: 'AI Connect Four',
-      description: 'Intelligent Connect Four game with AI opponent using minimax algorithm with alpha-beta pruning. CS 4710 (Artificial Intelligence) course project at UVA.',
+      description: 'Connect Four game with a minimax + alpha-beta AI opponent for strategic play.',
       technologies: ['Python', 'AI/ML', 'Minimax Algorithm', 'Game Theory'],
       githubUrl: 'https://github.com/quyenxhuynh/ai-connect4',
       imageUrl: imagePath('ai-connect4.png'),
@@ -27,7 +27,7 @@ const Projects: React.FC = () => {
     {
       id: '3',
       title: 'Wordle Replica',
-      description: 'An recreation of the popular Wordle word-guessing game with clean UI and game mechanics matching the original experience, with added features.',
+      description: 'Polished Wordle clone with faithful mechanics and additional quality-of-life features.',
       technologies: ['JavaScript', 'HTML/CSS', 'Game Logic', 'Responsive Design'],
       githubUrl: 'https://github.com/quyenxhuynh/wordle-replica',
       imageUrl: imagePath('wordle-replica.png'),
@@ -36,7 +36,7 @@ const Projects: React.FC = () => {
     {
       id: '4',
       title: 'Finder',
-      description: 'CS 3240 (Advanced Software Development) group project - a web application for connecting users with shared interests and activities.',
+      description: 'Interest-matching web app designed to help users discover shared activities.',
       technologies: ['HTML', 'CSS', 'JavaScript', 'Web Development'],
       githubUrl: 'https://github.com/quyenxhuynh/finder',
       imageUrl: imagePath('finder.png'),
@@ -45,7 +45,7 @@ const Projects: React.FC = () => {
     {
       id: '5',
       title: 'invit.io',
-      description: 'CS 4640 (Programming Languages for Web Applications) project - an event invitation and management platform built with modern web technologies.',
+      description: 'Event invitation and management platform with scheduling and attendee workflows.',
       technologies: ['PHP', 'Web Development', 'Database Design'],
       githubUrl: 'https://github.com/quyenxhuynh/invit.io',
       imageUrl: imagePath('invit-io.png'),
@@ -54,7 +54,7 @@ const Projects: React.FC = () => {
     {
       id: '6',
       title: 'MCU Database',
-      description: 'CS 4750 (Database Systems) project - a comprehensive database system for managing and exploring Marvel Cinematic Universe information.',
+      description: 'Relational database project for exploring and querying Marvel universe data.',
       technologies: ['JavaScript', 'Database Systems', 'SQL', 'Web Development'],
       githubUrl: 'https://github.com/quyenxhuynh/mcu',
       imageUrl: imagePath('mcu-database.png'),

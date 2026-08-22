@@ -19,10 +19,10 @@ const Teaching: React.FC = () => {
       institution: 'University of Virginia',
       period: 'Fall 2019 - Spring 2021',
       description: [
-        'Led computer science laboratory sessions and lectures for undergraduate students',
-        'Supervised and mentored multiple Teaching Assistants as Lead TA',
-        'Adapted teaching methods for remote learning during COVID-19 pandemic',
-        'Provided comprehensive student support through office hours and personalized feedback'
+        'Led programming labs and mini-lectures for undergraduate cohorts.',
+        'Supervised and mentored other teaching assistants as lead TA.',
+        'Adapted labs and support workflows for remote learning during COVID-19.',
+        'Provided office hours and actionable student feedback each week.'
       ]
     },
     {
@@ -32,10 +32,10 @@ const Teaching: React.FC = () => {
       institution: 'George Mason University',
       period: 'Spring 2025',
       description: [
-        'Supported students in practical scientific computing and data analysis techniques',
-        'Held regular office hours for experimental data analysis and scientific modeling',
-        'Graded assignments on scientific presentations, data ethics, and problem-solving',
-        'Helped students develop proficiency with scientific research software systems'
+        'Supported students in scientific computing and practical data analysis.',
+        'Held office hours focused on modeling, debugging, and experiment workflows.',
+        'Graded work on scientific communication, ethics, and analytical rigor.',
+        'Helped students become fluent with core research software tools.'
       ]
     }
   ];

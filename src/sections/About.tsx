@@ -19,21 +19,19 @@ const About: React.FC = () => {
           <div className="about__text">
             <h3 className="about__heading">Who I Am</h3>
             <p>
-              I'm a Software Engineer at Microsoft with a passion for building intelligent systems 
-              and enterprise AI solutions. My expertise spans machine learning infrastructure, 
-              Azure ML pipelines, and AI integration platforms like Copilot for Purview.
+              I am a Seattle-based software engineer building AI-native classification systems at
+              Microsoft. My core strengths are enterprise AI, production ML platforms, and scalable
+              backend systems.
             </p>
             <p>
-              From leading teaching labs at UVA to developing anomaly detection systems at Microsoft, 
-              I've consistently focused on creating technology that solves real problems. I have 
-              experience in both academic and enterprise environments, with a track record of 
-              building scalable ML systems and mentoring teams.
+              I focus on turning complex data and governance workflows into trustworthy automated
+              classification experiences that teams can adopt.
             </p>
-            <p>
-              My goal is to leverage artificial intelligence and machine learning to create 
-              enterprise solutions that deliver measurable business impact and improve how 
-              organizations manage and understand their data.
-            </p>
+            <ul className="about__impact-list">
+              <li>Build AI-native classification capabilities for enterprise data workflows.</li>
+              <li>Designed ML pipelines covering ingestion, training, validation, and deployment.</li>
+              <li>Led labs and mentored assistants, strengthening communication and leadership.</li>
+            </ul>
           </div>
           
           <div className="about__skills">

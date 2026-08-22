@@ -12,10 +12,10 @@ const Experience: React.FC = () => {
       company: 'theCourseForum',
       period: '2021',
       description: [
-        'Contributed to platform modernization by assisting with Django migration to improve system scalability and maintainability for the student community',
-        'Enhanced website accessibility features and user interface components to provide better service for diverse student users accessing course information',
-        'Developed improvements for a platform serving thousands of University of Virginia students seeking course reviews and academic planning resources',
-        'Collaborated with team members to implement user experience enhancements that streamlined site navigation and functionality'
+        'Supported a Django migration to improve reliability and long-term maintainability.',
+        'Improved accessibility and UI quality for a platform used by thousands of UVA students.',
+        'Shipped navigation and usability enhancements that reduced friction in course discovery.',
+        'Collaborated in an iterative product workflow with engineers and student stakeholders.'
       ],
       technologies: ['Django', 'Python', 'HTML/CSS', 'Tailwind']
     },
@@ -25,10 +25,10 @@ const Experience: React.FC = () => {
       company: 'Microsoft',
       period: '2021 - 2023',
       description: [
-        'Designed and built Azure ML pipeline infrastructure to streamline machine learning model lifecycle management from data ingestion to production deployment',
-        'Implemented comprehensive ML workflow including data extraction, model training, validation, and scoring processes to ensure model quality and performance',
-        'Developed automated model publishing system with performance comparison logic to promote only models that outperform last-known-good baselines',
-        'Established daily scheduled pipeline triggers enabling continuous model deployment and reducing manual intervention in ML operations workflow'
+        'Built Azure ML pipeline infrastructure for end-to-end model lifecycle management.',
+        'Implemented data extraction, training, validation, and scoring workflows.',
+        'Created automated model promotion gates against last-known-good baselines.',
+        'Enabled daily production pipeline schedules and reduced manual MLOps overhead.'
       ],
       technologies: ['Python', 'C#', 'PySpark', 'Hadoop']
     },
@@ -38,10 +38,10 @@ const Experience: React.FC = () => {
       company: 'Microsoft',
       period: '2023 - Present',
       description: [
-        'Contributed to Copilot for Purview development by building enterprise AI capabilities that enable organizations to manage data governance and compliance across multiple tenants',
-        'Currently developing intelligent anomaly detection agents to automatically identify and validate legitimate security alerts, reducing false positive investigation overhead',
-        'Designed and implemented suggested prompts system that dynamically generates contextual AI responses, improving user interaction speed and response accuracy',
-        'Built enterprise-scale solutions architected to serve multiple organizational tenants while maintaining data isolation and security compliance requirements'
+        'Build AI-native classification capabilities for enterprise data and governance workflows.',
+        'Develop scalable services that enable trustworthy automated data classification.',
+        'Partner across engineering and product to turn complex classification needs into usable features.',
+        'Maintain multi-tenant architecture with strong isolation and compliance controls.'
       ],
       technologies: ['C#', 'Python', 'pandas', 'NumPy']
     },

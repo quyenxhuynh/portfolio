@@ -22,14 +22,14 @@ const Education: React.FC = () => {
     },
     {
       id: 'edu-2023-gmu',
-      title: 'Transfer: Computational Data Science',
+      title: 'Post-baccalaureate Coursework, Computational Data Science',
       school: 'George Mason University',
       period: 'August 2024 - December 2024',
       gpa: '4.0/4.0',
     },
     {
       id: 'edu-2023-scc',
-      title: 'Transfer: Post-baccalaureate',
+      title: 'Post-baccalaureate Coursework',
       school: 'Shoreline Community College',
       period: 'June 2025 - Present',
       gpa: '3.7/4.0',

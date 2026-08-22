@@ -1,127 +1,114 @@
 .experience {
-  padding: 5.75rem 2rem;
-  background-color: #f8f9fa;
+  padding: 6.4rem 2rem;
+  background: transparent;
 }
 
 .experience__container {
-  max-width: 1000px;
+  max-width: 1020px;
   margin: 0 auto;
 }
 
 .experience__header {
   text-align: center;
-  margin-bottom: 4.25rem;
+  margin-bottom: 4.4rem;
 }
 
 .timeline {
   position: relative;
-  padding: 2rem 0;
+  padding-left: 0.2rem;
 }
 
 .timeline::before {
   content: '';
   position: absolute;
-  left: 1rem;
-  top: 0;
-  bottom: 0;
-  width: 3px;
-  background: linear-gradient(to bottom, #ff6b35, #e55a2e);
+  left: 0.95rem;
+  top: 0.1rem;
+  bottom: 0.1rem;
+  width: 2px;
+  background: linear-gradient(to bottom, rgba(47, 107, 255, 0.4), rgba(255, 107, 53, 0.45));
 }
 
 .timeline-item {
   position: relative;
-  margin-bottom: 3rem;
-  width: 100%;
+  margin-bottom: 2rem;
 }
 
 .timeline-content {
-  margin-left: 3rem;
-  margin-right: 0;
-  padding-left: 1rem;
-  text-align: left;
+  margin-left: 2.5rem;
 }
 
 .timeline-marker {
   position: absolute;
-  left: 1rem;
-  top: 1.5rem;
-  width: 24px;
-  height: 24px;
-  background-color: #ff6b35;
-  border: 4px solid white;
+  left: 0.95rem;
+  top: 1.3rem;
+  width: 14px;
+  height: 14px;
   border-radius: 50%;
   transform: translateX(-50%);
-  z-index: 10;
-  box-shadow: 0 0 0 4px rgba(255, 107, 53, 0.25);
-}
-
-.timeline-content {
-  position: relative;
+  background: linear-gradient(120deg, #2f6bff, #ff6b35);
+  box-shadow: 0 0 0 5px rgba(47, 107, 255, 0.16);
+  z-index: 2;
 }
 
 .experience-card {
-  background: white;
-  padding: 2.1rem;
-  border-radius: 12px;
-  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
-  border: 2px solid #e9ecef;
-  transition: all 0.3s ease;
-  animation: fadeInUp 0.6s ease-out;
+  background: rgba(255, 255, 255, 0.76);
+  border: 1px solid rgba(15, 23, 42, 0.08);
+  border-radius: 1.2rem;
+  box-shadow: 0 18px 40px rgba(19, 29, 50, 0.09);
+  backdrop-filter: blur(8px);
+  padding: 1.85rem;
+  transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
 }
 
 .experience-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.15);
-  border-color: #ff6b35;
+  transform: translateY(-3px);
+  box-shadow: 0 24px 44px rgba(19, 29, 50, 0.13);
+  border-color: rgba(47, 107, 255, 0.26);
 }
 
 .experience-header {
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
-  margin-bottom: 0.5rem;
-  flex-wrap: wrap;
-  gap: 0.5rem;
+  gap: 0.8rem;
+  margin-bottom: 0.4rem;
 }
 
 .experience-title {
-  font-size: 1.38rem;
-  font-weight: 700;
+  font-size: 1.42rem;
+  font-weight: 760;
   color: #111827;
-  margin: 0;
-  letter-spacing: -0.01em;
+  letter-spacing: -0.02em;
 }
 
 .experience-period {
-  background-color: #ff6b35;
-  color: white;
-  padding: 0.3rem 0.8rem;
-  border-radius: 1rem;
-  font-size: 0.85rem;
-  font-weight: 600;
+  color: #1f3165;
+  background: rgba(47, 107, 255, 0.12);
+  border: 1px solid rgba(47, 107, 255, 0.2);
+  border-radius: 999px;
+  font-size: 0.82rem;
+  font-weight: 700;
+  padding: 0.35rem 0.75rem;
   white-space: nowrap;
 }
 
 .experience-company {
-  font-size: 1.08rem;
-  font-weight: 600;
-  color: #4b5563;
-  margin: 0 0 1.3rem 0;
-  text-align: left;
+  font-size: 1.03rem;
+  font-weight: 650;
+  color: #5b6477;
+  margin-bottom: 1rem;
 }
 
 .experience-description {
   list-style: disc;
   padding-left: 1.2rem;
-  margin: 0 0 1.5rem 0;
-  text-align: left;
+  margin: 0 0 1.25rem 0;
 }
 
 .experience-description li {
-  margin-bottom: 0.72rem;
-  color: #374151;
-  line-height: 1.7;
-  text-align: left;
+  color: #3d4a62;
+  line-height: 1.72;
+  margin-bottom: 0.65rem;
 }
 
 .experience-description li::marker {
@@ -135,64 +122,44 @@
 }
 
 .tech-tag {
-  background-color: #e9ecef;
-  color: #1a1a1a;
-  padding: 0.3rem 0.8rem;
-  border-radius: 1rem;
-  font-size: 0.85rem;
-  font-weight: 500;
-  border: 1px solid #dee2e6;
-  transition: all 0.3s ease;
+  background: rgba(255, 255, 255, 0.88);
+  border: 1px solid rgba(15, 23, 42, 0.1);
+  color: #2f3d57;
+  padding: 0.34rem 0.8rem;
+  border-radius: 999px;
+  font-size: 0.83rem;
+  font-weight: 600;
+  transition: transform 0.2s ease, border-color 0.2s ease;
 }
 
 .tech-tag:hover {
-  background-color: #ff6b35;
-  color: white;
-  border-color: #ff6b35;
-}
-
-@keyframes fadeInUp {
-  from {
-    opacity: 0;
-    transform: translateY(30px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+  transform: translateY(-1px);
+  border-color: rgba(47, 107, 255, 0.32);
 }
 
 @media (max-width: 768px) {
   .experience {
-    padding: 4rem 1rem;
+    padding: 4.5rem 1rem;
   }
-  
-  .timeline::before {
-    left: 1rem;
+
+  .experience__header {
+    margin-bottom: 3.2rem;
   }
-  
+
   .timeline-content {
-    margin-left: 3rem;
-    margin-right: 0;
-    padding-left: 1rem;
-    padding-right: 0;
-    text-align: left;
+    margin-left: 2.1rem;
   }
-  
-  .timeline-marker {
-    left: 1rem;
-  }
-  
+
   .experience-card {
-    padding: 1.5rem;
+    padding: 1.35rem;
   }
-  
+
   .experience-header {
     flex-direction: column;
     align-items: flex-start;
   }
-  
+
   .experience-title {
-    font-size: 1.1rem;
+    font-size: 1.2rem;
   }
 }

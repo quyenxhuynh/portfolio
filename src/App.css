@@ -1,11 +1,19 @@
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap');
+
 /* Global App Styles */
 :root {
-  --space-section-desktop: 5.75rem;
-  --space-section-mobile: 4rem;
+  --space-section-desktop: 6.5rem;
+  --space-section-mobile: 4.5rem;
   --text-body: 1.02rem;
-  --text-muted: #4b5563;
-  --text-heading: #111827;
+  --text-muted: #5b6477;
+  --text-heading: #0f172a;
+  --brand: #2f6bff;
   --accent: #ff6b35;
+  --surface: rgba(255, 255, 255, 0.74);
+  --surface-strong: rgba(255, 255, 255, 0.9);
+  --stroke: rgba(18, 26, 45, 0.1);
+  --radius-xl: 1.25rem;
+  --shadow-soft: 0 20px 50px rgba(19, 27, 45, 0.1);
 }
 
 * {
@@ -19,29 +27,33 @@ html {
 }
 
 body {
-  font-family: 'Avenir Next', 'Segoe UI', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-family: 'Manrope', 'Avenir Next', 'Segoe UI', 'Helvetica Neue', Helvetica, sans-serif;
   line-height: 1.65;
   color: #1f2937;
-  background-color: #fff;
   font-size: var(--text-body);
+  background:
+    radial-gradient(circle at 8% -10%, rgba(47, 107, 255, 0.2) 0%, rgba(47, 107, 255, 0) 34%),
+    radial-gradient(circle at 95% 10%, rgba(255, 107, 53, 0.15) 0%, rgba(255, 107, 53, 0) 33%),
+    linear-gradient(180deg, #f5f8ff 0%, #f8fafe 42%, #f6f9ff 100%);
 }
 
 .app {
   min-height: 100vh;
+  overflow: clip;
 }
 
 main {
-  padding-top: 0; /* Navigation handles the spacing */
+  padding-top: 0;
 }
 
 main section {
-  scroll-margin-top: 6.2rem;
+  scroll-margin-top: 7.2rem;
 }
 
 .section-title {
-  font-size: clamp(2rem, 1.6rem + 1.5vw, 2.7rem);
-  font-weight: 750;
-  letter-spacing: -0.02em;
+  font-size: clamp(2rem, 1.52rem + 2vw, 3rem);
+  font-weight: 780;
+  letter-spacing: -0.03em;
   margin-bottom: 1rem;
   color: var(--text-heading);
   position: relative;
@@ -50,16 +62,15 @@ main section {
 .section-title::after {
   content: '';
   position: absolute;
-  bottom: -10px;
+  bottom: -12px;
   left: 50%;
   transform: translateX(-50%);
-  width: 68px;
-  height: 4px;
-  background-color: var(--accent);
+  width: 74px;
+  height: 5px;
   border-radius: 999px;
+  background: linear-gradient(120deg, var(--brand), var(--accent));
 }
 
-/* Utility Classes */
 .section {
   padding: var(--space-section-desktop) 2rem;
 }
@@ -74,53 +85,54 @@ main section {
   text-align: center;
 }
 
-/* Global Button Styles */
 .btn {
-  display: inline-block;
-  padding: 0.75rem 1.5rem;
-  border-radius: 0.5rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.4rem;
+  padding: 0.85rem 1.55rem;
+  border-radius: 999px;
   text-decoration: none;
-  font-weight: 600;
-  transition: all 0.3s ease;
-  border: 2px solid transparent;
+  font-weight: 680;
+  letter-spacing: 0.01em;
+  border: 1.5px solid transparent;
+  transition: transform 0.24s ease, box-shadow 0.24s ease, background-color 0.24s ease;
   cursor: pointer;
-  font-size: 1rem;
+  font-size: 0.98rem;
 }
 
 .btn--primary {
-  background-color: #007bff;
-  color: white;
-  border-color: #007bff;
+  color: #ffffff;
+  background: linear-gradient(120deg, var(--brand), #4c58f1);
+  border-color: rgba(255, 255, 255, 0.2);
+  box-shadow: 0 10px 26px rgba(47, 107, 255, 0.28);
 }
 
 .btn--primary:hover {
-  background-color: #0056b3;
-  border-color: #0056b3;
   transform: translateY(-2px);
-  box-shadow: 0 4px 12px rgba(0, 123, 255, 0.3);
+  box-shadow: 0 14px 30px rgba(47, 107, 255, 0.33);
 }
 
 .btn--secondary {
-  background-color: transparent;
-  color: #007bff;
-  border-color: #007bff;
+  color: #1d2c52;
+  background: var(--surface);
+  border-color: rgba(47, 107, 255, 0.25);
+  backdrop-filter: blur(8px);
 }
 
 .btn--secondary:hover {
-  background-color: #007bff;
-  color: white;
   transform: translateY(-2px);
-  box-shadow: 0 4px 12px rgba(0, 123, 255, 0.3);
+  background: var(--surface-strong);
+  box-shadow: 0 10px 24px rgba(30, 45, 86, 0.14);
 }
 
-/* Responsive Design */
 @media (max-width: 768px) {
   .section {
     padding: var(--space-section-mobile) 1rem;
   }
 
   main section {
-    scroll-margin-top: 8.5rem;
+    scroll-margin-top: 8.6rem;
   }
 }
 
@@ -138,7 +150,6 @@ main section {
   }
 }
 
-/* Animation Classes */
 @keyframes fadeIn {
   from {
     opacity: 0;

@@ -6,15 +6,20 @@ const Home: React.FC = () => {
     <section id="home" className="home">
       <div className="home__container">
         <div className="home__content">
+          <p className="home__kicker">Software Engineer II at Microsoft</p>
           <h1 className="home__title">
             Hi, I'm <span className="home__name">Quyen</span>!
           </h1>
           <h2 className="home__subtitle">Software Engineer</h2>
           <p className="home__description">
-            I build enterprise AI solutions and machine learning infrastructure at scale. 
-            From Azure ML pipelines to Copilot integration, I create intelligent systems 
-            that solve real-world problems and deliver business value.
+            I build AI-native classification systems for enterprise data, with a focus on
+            scalable architecture, trustworthy automation, and measurable user impact.
           </p>
+          <div className="home__highlights" aria-label="Career highlights">
+            <span className="home__highlight">AI-native Classification</span>
+            <span className="home__highlight">Enterprise AI</span>
+            <span className="home__highlight">Multi-tenant Systems</span>
+          </div>
           <div className="home__cta">
             <a href="#projects" className="btn btn--primary">
               View My Work

@@ -1,7 +1,13 @@
-/* Import Inter font from Google Fonts */
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
-
 /* Global App Styles */
+:root {
+  --space-section-desktop: 5.75rem;
+  --space-section-mobile: 4rem;
+  --text-body: 1.02rem;
+  --text-muted: #4b5563;
+  --text-heading: #111827;
+  --accent: #ff6b35;
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -13,10 +19,11 @@ html {
 }
 
 body {
-  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', sans-serif;
-  line-height: 1.6;
-  color: #333;
+  font-family: 'Avenir Next', 'Segoe UI', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  line-height: 1.65;
+  color: #1f2937;
   background-color: #fff;
+  font-size: var(--text-body);
 }
 
 .app {
@@ -27,9 +34,34 @@ main {
   padding-top: 0; /* Navigation handles the spacing */
 }
 
+main section {
+  scroll-margin-top: 6.2rem;
+}
+
+.section-title {
+  font-size: clamp(2rem, 1.6rem + 1.5vw, 2.7rem);
+  font-weight: 750;
+  letter-spacing: -0.02em;
+  margin-bottom: 1rem;
+  color: var(--text-heading);
+  position: relative;
+}
+
+.section-title::after {
+  content: '';
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 68px;
+  height: 4px;
+  background-color: var(--accent);
+  border-radius: 999px;
+}
+
 /* Utility Classes */
 .section {
-  padding: 5rem 2rem;
+  padding: var(--space-section-desktop) 2rem;
 }
 
 .container {
@@ -84,7 +116,25 @@ main {
 /* Responsive Design */
 @media (max-width: 768px) {
   .section {
-    padding: 3rem 1rem;
+    padding: var(--space-section-mobile) 1rem;
+  }
+
+  main section {
+    scroll-margin-top: 8.5rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
   }
 }
 

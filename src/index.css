@@ -116,12 +116,19 @@ button {
   transition: all 0.3s ease;
 }
 
-button:focus,
-a:focus,
-input:focus,
-textarea:focus {
+button:focus-visible,
+a:focus-visible,
+input:focus-visible,
+textarea:focus-visible {
   outline: 2px solid var(--primary-color);
   outline-offset: 2px;
+}
+
+button:focus:not(:focus-visible),
+a:focus:not(:focus-visible),
+input:focus:not(:focus-visible),
+textarea:focus:not(:focus-visible) {
+  outline: none;
 }
 
 /* Utility Classes */

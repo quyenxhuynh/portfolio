@@ -2,7 +2,7 @@
   min-height: 100vh;
   display: flex;
   align-items: center;
-  padding: 6rem 2rem 2rem;
+  padding: 7.25rem 2rem 2.5rem;
   background: linear-gradient(135deg, #4a5fd1 0%, #5c3a8c 100%);
   color: white;
   position: relative;
@@ -36,11 +36,12 @@
 }
 
 .home__title {
-  font-size: 3.5rem;
+  font-size: clamp(2.4rem, 2rem + 2.6vw, 4rem);
   font-weight: 700;
-  margin-bottom: 1rem;
+  margin-bottom: 1.1rem;
   line-height: 1.2;
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  letter-spacing: -0.02em;
 }
 
 .home__name {
@@ -50,19 +51,19 @@
 }
 
 .home__subtitle {
-  font-size: 1.75rem;
+  font-size: clamp(1.3rem, 1.1rem + 1.2vw, 1.95rem);
   font-weight: 400;
-  margin-bottom: 1.5rem;
+  margin-bottom: 1.25rem;
   color: #f5f5f5;
   text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.4);
 }
 
 .home__description {
-  font-size: 1.1rem;
-  line-height: 1.6;
-  margin-bottom: 2.5rem;
+  font-size: 1.16rem;
+  line-height: 1.75;
+  margin-bottom: 2.2rem;
   color: #ffffff;
-  max-width: 500px;
+  max-width: 540px;
   text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.4);
 }
 
@@ -83,7 +84,7 @@
   cursor: pointer;
 }
 
-.btn--primary {
+.home .btn--primary {
   background-color: #ff6b35;
   color: white;
   border-color: #ff6b35;
@@ -91,26 +92,33 @@
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
 }
 
-.btn--primary:hover {
+.home .btn--primary:hover {
   background-color: #e55a2e;
   border-color: #e55a2e;
   transform: translateY(-2px);
   box-shadow: 0 6px 16px rgba(255, 107, 53, 0.4);
 }
 
-.btn--secondary {
-  background-color: rgba(255, 255, 255, 0.15);
-  color: white;
-  border-color: white;
+.home .btn--secondary {
+  background-color: rgba(255, 255, 255, 0.18);
+  color: #f9fbff;
+  border-color: rgba(255, 255, 255, 0.9);
   text-shadow: none;
   backdrop-filter: blur(10px);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
 }
 
-.btn--secondary:hover {
-  background-color: white;
-  color: #4a5fd1;
+.home .btn--secondary:hover {
+  background-color: rgba(255, 255, 255, 0.96);
+  color: #243890;
+  border-color: rgba(255, 255, 255, 0.96);
   transform: translateY(-2px);
   box-shadow: 0 6px 16px rgba(255, 255, 255, 0.4);
+}
+
+.home .btn:focus-visible {
+  outline: 3px solid rgba(255, 255, 255, 0.9);
+  outline-offset: 3px;
 }
 
 .home__visual {
@@ -166,7 +174,7 @@
 
 @media (max-width: 768px) {
   .home {
-    padding: 6rem 1rem 2rem;
+    padding: 8.75rem 1rem 2rem;
   }
   
   .home__container {
@@ -180,7 +188,7 @@
   }
   
   .home__subtitle {
-    font-size: 1.5rem;
+    font-size: 1.85rem;
   }
   
   .home__avatar {

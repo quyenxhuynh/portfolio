@@ -1,5 +1,5 @@
 .teaching {
-  padding: 4.5rem 2rem;
+  padding: 5.5rem 2rem;
   background-color: white;
 }
 
@@ -10,7 +10,7 @@
 
 .teaching__header {
   text-align: center;
-  margin-bottom: 4rem;
+  margin-bottom: 4.25rem;
 }
 
 .teaching-grid {
@@ -21,7 +21,7 @@
 
 .teaching-card {
   background: #f8f9fa;
-  padding: 2rem;
+  padding: 2.15rem;
   border-radius: 12px;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
   border: 1px solid #e9ecef;
@@ -49,14 +49,15 @@
 }
 
 .teaching-title {
-  font-size: 1.4rem;
+  font-size: 1.46rem;
   font-weight: 700;
-  color: #1a1a1a;
+  color: #111827;
   margin: 0 0 0.5rem 0;
+  letter-spacing: -0.01em;
 }
 
 .teaching-course {
-  font-size: 1.1rem;
+  font-size: 1.12rem;
   font-weight: 600;
   color: #ff6b35;
   margin: 0 0 0.25rem 0;
@@ -93,9 +94,9 @@
 }
 
 .teaching-description li {
-  margin-bottom: 0.5rem;
-  color: #333;
-  line-height: 1.6;
+  margin-bottom: 0.62rem;
+  color: #374151;
+  line-height: 1.72;
   text-align: left;
 }
 
@@ -179,7 +180,7 @@
 
 @media (max-width: 768px) {
   .teaching {
-    padding: 3rem 1rem;
+    padding: 4rem 1rem;
   }
   
   .teaching-header {

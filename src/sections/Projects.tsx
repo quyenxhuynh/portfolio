@@ -2,6 +2,8 @@ import React from 'react';
 import type { Project } from '../types';
 import './Projects.css';
 
+const imagePath = (fileName: string) => `${import.meta.env.BASE_URL}images/${fileName}`;
+
 const Projects: React.FC = () => {
   const projects: Project[] = [
     {
@@ -10,7 +12,7 @@ const Projects: React.FC = () => {
       description: 'A web-based card game simulator built with Electron, React, and TypeScript. Features include tracking card statistics and user performance.',
       technologies: ['React', 'TypeScript', 'Vite', 'Tailwind CSS', 'Mantine UI'],
       // githubUrl: 'https://github.com/quyenxhuynh/electron-forge-template',
-      imageUrl: '/images/card-simulation.png',
+      imageUrl: imagePath('card-simulation.png'),
       emoji: '⚡'
     },
     {
@@ -19,7 +21,7 @@ const Projects: React.FC = () => {
       description: 'Intelligent Connect Four game with AI opponent using minimax algorithm with alpha-beta pruning. CS 4710 (Artificial Intelligence) course project at UVA.',
       technologies: ['Python', 'AI/ML', 'Minimax Algorithm', 'Game Theory'],
       githubUrl: 'https://github.com/quyenxhuynh/ai-connect4',
-      imageUrl: '/images/ai-connect4.png',
+      imageUrl: imagePath('ai-connect4.png'),
       emoji: ''
     },
     {
@@ -28,7 +30,7 @@ const Projects: React.FC = () => {
       description: 'An recreation of the popular Wordle word-guessing game with clean UI and game mechanics matching the original experience, with added features.',
       technologies: ['JavaScript', 'HTML/CSS', 'Game Logic', 'Responsive Design'],
       githubUrl: 'https://github.com/quyenxhuynh/wordle-replica',
-      imageUrl: '/images/wordle-replica.png',
+      imageUrl: imagePath('wordle-replica.png'),
       emoji: '🖋️'
     },
     {
@@ -37,7 +39,7 @@ const Projects: React.FC = () => {
       description: 'CS 3240 (Advanced Software Development) group project - a web application for connecting users with shared interests and activities.',
       technologies: ['HTML', 'CSS', 'JavaScript', 'Web Development'],
       githubUrl: 'https://github.com/quyenxhuynh/finder',
-      imageUrl: '/images/finder.png',
+      imageUrl: imagePath('finder.png'),
       emoji: '🔍'
     },
     {
@@ -46,7 +48,7 @@ const Projects: React.FC = () => {
       description: 'CS 4640 (Programming Languages for Web Applications) project - an event invitation and management platform built with modern web technologies.',
       technologies: ['PHP', 'Web Development', 'Database Design'],
       githubUrl: 'https://github.com/quyenxhuynh/invit.io',
-      imageUrl: '/images/invit-io.png',
+      imageUrl: imagePath('invit-io.png'),
       emoji: '🎉'
     },
     {
@@ -55,7 +57,7 @@ const Projects: React.FC = () => {
       description: 'CS 4750 (Database Systems) project - a comprehensive database system for managing and exploring Marvel Cinematic Universe information.',
       technologies: ['JavaScript', 'Database Systems', 'SQL', 'Web Development'],
       githubUrl: 'https://github.com/quyenxhuynh/mcu',
-      imageUrl: '/images/mcu-database.png',
+      imageUrl: imagePath('mcu-database.png'),
       emoji: '🦸'
     }
   ];
@@ -75,6 +77,10 @@ const Projects: React.FC = () => {
                   <img 
                     src={project.imageUrl} 
                     alt={project.title}
+                    loading="lazy"
+                    decoding="async"
+                    width={800}
+                    height={450}
                     onError={(e) => {
                       const target = e.target as HTMLImageElement;
                       target.style.display = 'none';

@@ -1,5 +1,5 @@
 .education {
-  padding: 4.5rem 2rem;
+  padding: 5.5rem 2rem;
   background-color: white;
 }
 
@@ -10,7 +10,7 @@
 
 .education__header {
   text-align: center;
-  margin-bottom: 4rem;
+  margin-bottom: 4.25rem;
 }
 
 .education-grid {
@@ -20,7 +20,7 @@
 }
 
 .education-item {
-  padding: 1.5rem 0;
+  padding: 1.8rem 0;
   border-bottom: 1px solid #e9ecef;
   transition: all 0.3s ease;
 }
@@ -62,9 +62,9 @@
 }
 
 .education-title {
-  font-size: 1.1rem;
+  font-size: 1.24rem;
   font-weight: 700;
-  color: #1a1a1a;
+  color: #111827;
   margin: 0;
   flex: 1;
   min-width: 120px;
@@ -83,9 +83,9 @@
 }
 
 .education-school {
-  font-size: 1rem;
+  font-size: 1.05rem;
   font-weight: 600;
-  color: #444;
+  color: #4b5563;
   margin: 0 0 0.75rem 0;
 }
 
@@ -120,9 +120,9 @@
 }
 
 .coursework-list li {
-  margin-bottom: 0.25rem;
-  font-size: 0.8rem;
-  line-height: 1.4;
+  margin-bottom: 0.35rem;
+  font-size: 0.9rem;
+  line-height: 1.55;
 }
 
 
@@ -140,7 +140,7 @@
 
 @media (max-width: 768px) {
   .education {
-    padding: 4rem 1.5rem;
+    padding: 4rem 1rem;
   }
   
   .education-grid {

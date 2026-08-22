@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import type { NavItem } from '../types';
 import { smoothScrollTo } from '../utils/scroll';
 import './Navigation.css';
@@ -10,49 +10,183 @@ interface NavigationProps {
 const Navigation: React.FC<NavigationProps> = ({ items }) => {
   const [activeSection, setActiveSection] = useState<string>('home');
   const [isScrolled, setIsScrolled] = useState<boolean>(false);
+  const [isMenuOpen, setIsMenuOpen] = useState<boolean>(false);
+  const navRef = useRef<HTMLElement>(null);
+  const toggleButtonRef = useRef<HTMLButtonElement>(null);
+  const firstMenuLinkRef = useRef<HTMLAnchorElement>(null);
 
   useEffect(() => {
-    const handleScroll = () => {
-      const scrollPosition = window.scrollY + 100;
-      setIsScrolled(window.scrollY > 50);
+    let animationFrameId = 0;
 
-      // Find the current section
-      for (const item of items) {
-        const element = document.getElementById(item.id);
-        if (element) {
-          const { offsetTop, offsetHeight } = element;
-          if (scrollPosition >= offsetTop && scrollPosition < offsetTop + offsetHeight) {
-            setActiveSection(item.id);
-            break;
-          }
+    const handleScroll = () => {
+      if (animationFrameId) {
+        return;
+      }
+
+      animationFrameId = window.requestAnimationFrame(() => {
+        const nextIsScrolled = window.scrollY > 50;
+        setIsScrolled((prev) => (prev === nextIsScrolled ? prev : nextIsScrolled));
+        animationFrameId = 0;
+      });
+    };
+
+    window.addEventListener('scroll', handleScroll, { passive: true });
+    handleScroll();
+
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+      if (animationFrameId) {
+        window.cancelAnimationFrame(animationFrameId);
+      }
+    };
+  }, []);
+
+  useEffect(() => {
+    const sectionElements = items
+      .map((item) => document.getElementById(item.id))
+      .filter((element): element is HTMLElement => element !== null);
+
+    if (!sectionElements.length) {
+      return;
+    }
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        const mostVisibleEntry = entries
+          .filter((entry) => entry.isIntersecting)
+          .sort((a, b) => b.intersectionRatio - a.intersectionRatio)[0];
+
+        if (mostVisibleEntry?.target?.id) {
+          const nextActiveSection = mostVisibleEntry.target.id;
+          setActiveSection((prev) => (prev === nextActiveSection ? prev : nextActiveSection));
         }
+      },
+      {
+        root: null,
+        rootMargin: '-45% 0px -45% 0px',
+        threshold: [0, 0.25, 0.5, 0.75, 1],
+      },
+    );
+
+    sectionElements.forEach((element) => observer.observe(element));
+
+    return () => {
+      observer.disconnect();
+    };
+  }, [items]);
+
+  useEffect(() => {
+    const handleResize = () => {
+      if (window.innerWidth > 768) {
+        setIsMenuOpen(false);
       }
     };
 
-    window.addEventListener('scroll', handleScroll);
-    handleScroll(); // Call once to set initial state
+    window.addEventListener('resize', handleResize);
+    return () => {
+      window.removeEventListener('resize', handleResize);
+    };
+  }, []);
 
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, [items]);
+  useEffect(() => {
+    if (!isMenuOpen || window.innerWidth > 768) {
+      document.body.style.overflow = '';
+      return;
+    }
+
+    document.body.style.overflow = 'hidden';
+    firstMenuLinkRef.current?.focus();
+
+    const handleKeyDown = (event: KeyboardEvent) => {
+      if (event.key === 'Escape') {
+        setIsMenuOpen(false);
+        toggleButtonRef.current?.focus();
+        return;
+      }
+
+      if (event.key !== 'Tab') {
+        return;
+      }
+
+      const menuRoot = navRef.current;
+      if (!menuRoot) {
+        return;
+      }
+
+      const focusableElements = menuRoot.querySelectorAll<HTMLElement>(
+        'button:not([disabled]), a[href], [tabindex]:not([tabindex="-1"])',
+      );
+
+      if (!focusableElements.length) {
+        return;
+      }
+
+      const firstElement = focusableElements[0];
+      const lastElement = focusableElements[focusableElements.length - 1];
+      const activeElement = document.activeElement as HTMLElement | null;
+
+      if (!event.shiftKey && activeElement === lastElement) {
+        event.preventDefault();
+        firstElement.focus();
+      }
+
+      if (event.shiftKey && activeElement === firstElement) {
+        event.preventDefault();
+        lastElement.focus();
+      }
+    };
+
+    const handlePointerDown = (event: MouseEvent) => {
+      const target = event.target as Node;
+      if (navRef.current && !navRef.current.contains(target)) {
+        setIsMenuOpen(false);
+      }
+    };
+
+    document.addEventListener('keydown', handleKeyDown);
+    document.addEventListener('mousedown', handlePointerDown);
+
+    return () => {
+      document.body.style.overflow = '';
+      document.removeEventListener('keydown', handleKeyDown);
+      document.removeEventListener('mousedown', handlePointerDown);
+    };
+  }, [isMenuOpen]);
 
   const handleNavClick = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
     e.preventDefault();
     const sectionId = href.substring(1); // Remove the '#'
     smoothScrollTo(sectionId);
+    setIsMenuOpen(false);
   };
 
   return (
-    <nav className={`navigation ${isScrolled ? 'navigation--scrolled' : ''}`}>
+    <nav className={`navigation ${isScrolled ? 'navigation--scrolled' : ''}`} ref={navRef}>
       <div className="navigation__container">
-        <div className="navigation__logo">
-          <a href="#home" onClick={(e) => handleNavClick(e, '#home')}>
-            Quyen Huynh
-          </a>
+        <div className="navigation__top-row">
+          <div className="navigation__logo">
+            <a href="#home" onClick={(e) => handleNavClick(e, '#home')}>
+              Quyen Huynh
+            </a>
+          </div>
+          <button
+            ref={toggleButtonRef}
+            type="button"
+            className={`navigation__toggle ${isMenuOpen ? 'navigation__toggle--open' : ''}`}
+            aria-label="Toggle navigation menu"
+            aria-expanded={isMenuOpen}
+            onClick={() => setIsMenuOpen((prev) => !prev)}
+          >
+            <span></span>
+            <span></span>
+            <span></span>
+          </button>
         </div>
-        <ul className="navigation__list">
+        <ul className={`navigation__list ${isMenuOpen ? 'navigation__list--open' : ''}`}>
           {items.map((item) => (
             <li key={item.id} className="navigation__item">
               <a
+                ref={item.id === items[0]?.id ? firstMenuLinkRef : undefined}
                 href={item.href}
                 className={`navigation__link ${
                   activeSection === item.id ? 'navigation__link--active' : ''

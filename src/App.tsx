@@ -1,36 +1,42 @@
+import { lazy, Suspense } from 'react';
 import Navigation from './components/Navigation';
-import Footer from './components/Footer';
 import Home from './sections/Home';
 import About from './sections/About';
-import Experience from './sections/Experience';
-import Teaching from './sections/Teaching';
-import Education from './sections/Education';
-import Projects from './sections/Projects';
 import type { NavItem } from './types';
 import './App.css';
 
-function App() {
-  const navItems: NavItem[] = [
-    { id: 'home', label: 'Home', href: '#home' },
-    { id: 'about', label: 'About', href: '#about' },
-    { id: 'experience', label: 'Experience', href: '#experience' },
-    { id: 'teaching', label: 'Teaching', href: '#teaching' },
-    { id: 'education', label: 'Education', href: '#education' },
-    { id: 'projects', label: 'Projects', href: '#projects' },
-  ];
+const Experience = lazy(() => import('./sections/Experience'));
+const Teaching = lazy(() => import('./sections/Teaching'));
+const Education = lazy(() => import('./sections/Education'));
+const Projects = lazy(() => import('./sections/Projects'));
+const Footer = lazy(() => import('./components/Footer'));
 
+const NAV_ITEMS: NavItem[] = [
+  { id: 'home', label: 'Home', href: '#home' },
+  { id: 'about', label: 'About', href: '#about' },
+  { id: 'experience', label: 'Experience', href: '#experience' },
+  { id: 'teaching', label: 'Teaching', href: '#teaching' },
+  { id: 'education', label: 'Education', href: '#education' },
+  { id: 'projects', label: 'Projects', href: '#projects' },
+];
+
+function App() {
   return (
     <div className="app">
-      <Navigation items={navItems} />
+      <Navigation items={NAV_ITEMS} />
       <main>
         <Home />
         <About />
-        <Experience />
-        <Teaching />
-        <Education />
-        <Projects />
+        <Suspense fallback={null}>
+          <Experience />
+          <Teaching />
+          <Education />
+          <Projects />
+        </Suspense>
       </main>
-      <Footer />
+      <Suspense fallback={null}>
+        <Footer />
+      </Suspense>
     </div>
   );
 }

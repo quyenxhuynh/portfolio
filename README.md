@@ -109,7 +109,7 @@ src/
 
 ## Deployment
 
-Every push to `main` builds the site and deploys it to GitHub Pages via the workflow in `.github/workflows/deploy.yml`. The custom domain is set by `public/CNAME`, which Vite copies into the build.
+Every push to `main` builds the site and deploys it to GitHub Pages via the workflow in `.github/workflows/deploy.yml`. In the repo's **Settings → Pages**, the source must be **GitHub Actions** and the custom domain `quyenhuynh.com`. The domain lives in those settings, not in a file. The deploy stops if any `[TODO` placeholders remain in `src/`.
 
 To build locally:
 

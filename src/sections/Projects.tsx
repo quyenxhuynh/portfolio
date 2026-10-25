@@ -7,16 +7,24 @@ const imagePath = (fileName: string) => `${import.meta.env.BASE_URL}images/${fil
 const Projects: React.FC = () => {
   const projects: Project[] = [
     {
-      id: '1',
+      id: 'deskdays',
+      title: 'DeskDays',
+      description: "An office-attendance tracker for return-to-office rules. One-tap check-ins, a 12-week history, and a clear answer to whether you're on track.",
+      technologies: ['Next.js', 'TypeScript', 'Supabase', 'Postgres', 'Vercel'],
+      githubUrl: 'https://github.com/quyenxhuynh/deskdays',
+      imageUrl: imagePath('deskdays.webp'),
+      emoji: '🏢'
+    },
+    {
+      id: 'card-simulator',
       title: 'Card Simulator',
       description: 'My desktop card-game simulator pairs playing a hand with looking at the numbers: gameplay analytics and performance tracking.',
       technologies: ['React', 'TypeScript', 'Vite', 'Tailwind CSS', 'Mantine UI'],
-      // githubUrl: 'https://github.com/quyenxhuynh/electron-forge-template',
       imageUrl: imagePath('card-simulation.webp'),
       emoji: '⚡'
     },
     {
-      id: '2',
+      id: 'ai-connect4',
       title: 'AI Connect Four',
       description: 'My take on Connect Four, with an AI opponent that searches ahead using minimax and alpha-beta pruning.',
       technologies: ['Python', 'Game AI', 'Minimax', 'Alpha-Beta Pruning'],
@@ -25,40 +33,13 @@ const Projects: React.FC = () => {
       emoji: ''
     },
     {
-      id: '3',
+      id: 'wordle-replica',
       title: 'Wordle Replica',
       description: 'My recreation of Wordle, bringing together word-game logic, familiar mechanics, and a responsive interface.',
       technologies: ['JavaScript', 'HTML/CSS', 'Game Logic', 'Responsive Design'],
       githubUrl: 'https://github.com/quyenxhuynh/wordle-replica',
       imageUrl: imagePath('wordle-replica.webp'),
       emoji: '🖋️'
-    },
-    {
-      id: '4',
-      title: 'Finder',
-      description: 'A web project built around a simple idea: help people find activities they have in common.',
-      technologies: ['HTML', 'CSS', 'JavaScript'],
-      githubUrl: 'https://github.com/quyenxhuynh/finder',
-      imageUrl: imagePath('finder.webp'),
-      emoji: '🔍'
-    },
-    {
-      id: '5',
-      title: 'invit.io',
-      description: 'An event-planning project that brings invitations, scheduling, and keeping track of attendees into one place.',
-      technologies: ['PHP', 'Database Design'],
-      githubUrl: 'https://github.com/quyenxhuynh/invit.io',
-      imageUrl: imagePath('invit-io.webp'),
-      emoji: '🎉'
-    },
-    {
-      id: '6',
-      title: 'MCU Database',
-      description: 'A little Marvel, a little SQL. This project puts a relational database behind exploring and querying the Marvel universe.',
-      technologies: ['JavaScript', 'Database Systems', 'SQL'],
-      githubUrl: 'https://github.com/quyenxhuynh/mcu',
-      imageUrl: imagePath('mcu-database.webp'),
-      emoji: '🦸'
     }
   ];
 
@@ -71,8 +52,8 @@ const Projects: React.FC = () => {
             <h2 className="section-title">Things I've built</h2>
           </div>
           <p className="projects__intro">
-            Not everything here is enterprise AI. There are games, tools for
-            bringing people together, and a trip into the Marvel universe.
+            What I build when no one's asking: a tracker for office days, a
+            few games, and an AI that plays Connect Four.
           </p>
         </div>
         

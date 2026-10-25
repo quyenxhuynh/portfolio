@@ -69,7 +69,7 @@ Update the following files with your personal information:
 
 ### Project Images
 
-Project screenshots live in `public/images/` as WebP files, about 1200px wide.
+Project screenshots live in `public/images/` as WebP files, about 1200px wide. The full-size originals are kept in `originals/images/`, which isn't deployed.
 
 ### Styling
 

@@ -10,6 +10,12 @@ interface TeachingItem {
   description: string[];
 }
 
+interface VolunteerItem {
+  id: string;
+  role: string;
+  organization: string;
+}
+
 const Teaching: React.FC = () => {
   const teachingExperience: TeachingItem[] = [
     {
@@ -40,14 +46,37 @@ const Teaching: React.FC = () => {
     }
   ];
 
+  const volunteering: VolunteerItem[] = [
+    {
+      id: 'volunteer-1',
+      role: 'Interview & Career Mentor',
+      organization: 'CodePath'
+    },
+    {
+      id: 'volunteer-2',
+      role: 'Teaching Assistant',
+      organization: 'TEALS'
+    },
+    {
+      id: 'volunteer-3',
+      role: 'Food Distribution Assistant',
+      organization: 'University District Food Bank'
+    },
+    {
+      id: 'volunteer-4',
+      role: 'Medical Center Support',
+      organization: 'Kaiser Permanente'
+    }
+  ];
+
   return (
     <section id="teaching" className="teaching">
       <div className="teaching__container">
         <div className="teaching__header">
           <p className="section-label">03 / Sharing what I know</p>
-          <h2 className="section-title">Teaching Experience</h2>
+          <h2 className="section-title">Teaching &amp; Mentoring</h2>
         </div>
-        
+
         <div className="teaching-grid">
           {teachingExperience.map((item) => (
             <div key={item.id} className="teaching-card">
@@ -59,17 +88,28 @@ const Teaching: React.FC = () => {
                 </div>
                 <span className="teaching-period">{item.period}</span>
               </div>
-              
+
               <div className="teaching-content">
                 <ul className="teaching-description">
                   {item.description.map((desc, idx) => (
                     <li key={idx}>{desc}</li>
                   ))}
                 </ul>
-                
+
               </div>
             </div>
           ))}
+        </div>
+
+        <div className="teaching-volunteer">
+          <h3 className="teaching-volunteer__title">Volunteer</h3>
+          <ul className="teaching-volunteer__list">
+            {volunteering.map((item) => (
+              <li key={item.id} className="teaching-volunteer__item">
+                {item.role} · <span>{item.organization}</span>
+              </li>
+            ))}
+          </ul>
         </div>
       </div>
     </section>

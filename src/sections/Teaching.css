@@ -58,9 +58,51 @@
   color: #8b9b90;
 }
 
+.teaching-volunteer {
+  margin-top: 4rem;
+  border-top: 1px solid var(--stroke);
+  padding-top: 1.75rem;
+}
+
+.teaching-volunteer__title {
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  margin-bottom: 1.25rem;
+}
+
+.teaching-volunteer__list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1rem 3.5rem;
+}
+
+.teaching-volunteer__item {
+  font-size: 0.95rem;
+  font-weight: 600;
+}
+
+.teaching-volunteer__item span {
+  font-weight: 500;
+  color: var(--brand);
+}
+
 @media (max-width: 768px) {
   .teaching-grid {
     grid-template-columns: 1fr;
     gap: 2rem;
+  }
+
+  .teaching-volunteer {
+    margin-top: 2.5rem;
+  }
+
+  .teaching-volunteer__list {
+    grid-template-columns: 1fr;
   }
 }

@@ -13,9 +13,7 @@ const Experience: React.FC = () => {
       period: 'Jan - May 2021',
       description: [
         'Supported a Django migration to improve reliability and long-term maintainability.',
-        'Improved accessibility and UI quality for a platform used by thousands of UVA students.',
-        'Shipped navigation and usability enhancements that reduced friction in course discovery.',
-        'Collaborated in an iterative product workflow with engineers and student stakeholders.'
+        'Improved accessibility, navigation, and course discovery for a platform used by thousands of UVA students.'
       ],
       technologies: ['Django', 'Python', 'HTML/CSS', 'Tailwind']
     },

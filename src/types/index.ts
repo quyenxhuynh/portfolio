@@ -32,3 +32,8 @@ export interface NavItem {
   label: string;
   href: string;
 }
+export interface ContactLink {
+  id: string;
+  label: string;
+  href: string;
+}

@@ -1,4 +1,5 @@
 import React from 'react';
+import { CONTACT_LINKS } from '../data/contact';
 import './Footer.css';
 
 const Footer: React.FC = () => {
@@ -10,7 +11,24 @@ const Footer: React.FC = () => {
         <p className="footer__text">
           Made with love from Seattle • {currentYear}
         </p>
-        <a className="footer__link" href="#home">Back to top <span aria-hidden="true">&uarr;</span></a>
+        <ul className="footer__links" aria-label="Find me online">
+          {CONTACT_LINKS.map((link) => (
+            <li key={link.id}>
+              <a
+                className="footer__link"
+                href={link.href}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label={`${link.label} (opens in a new tab)`}
+              >
+                {link.label}
+              </a>
+            </li>
+          ))}
+          <li>
+            <a className="footer__link" href="#home">Back to top <span aria-hidden="true">&uarr;</span></a>
+          </li>
+        </ul>
       </div>
     </footer>
   );

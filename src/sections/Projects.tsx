@@ -127,7 +127,7 @@ const Projects: React.FC = () => {
                         className="project-link"
                         aria-label={`Live demo of ${project.title} (opens in a new tab)`}
                       >
-                        Live demo <span aria-hidden="true">&nearr;</span>
+                        Live demo <span aria-hidden="true">↗</span>
                       </a>
                     )}
                     {project.githubUrl && (
@@ -138,7 +138,7 @@ const Projects: React.FC = () => {
                         className="project-link"
                         aria-label={`View code for ${project.title} (opens in a new tab)`}
                       >
-                        View code <span aria-hidden="true">&nearr;</span>
+                        View code <span aria-hidden="true">↗</span>
                       </a>
                     )}
                   </div>

@@ -1,4 +1,5 @@
 import React from 'react';
+import { CONTACT_LINKS } from '../data/contact';
 import './Home.css';
 
 const Home: React.FC = () => {
@@ -24,6 +25,20 @@ const Home: React.FC = () => {
               A little about me
             </a>
           </div>
+          <ul className="home__links" aria-label="Find me online">
+            {CONTACT_LINKS.map((link) => (
+              <li key={link.id}>
+                <a
+                  href={link.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label={`${link.label} (opens in a new tab)`}
+                >
+                  {link.label} <span aria-hidden="true">↗</span>
+                </a>
+              </li>
+            ))}
+          </ul>
         </div>
         <aside className="home__note" aria-labelledby="home-note-title">
           <p className="home__note-label">Another part of my story</p>

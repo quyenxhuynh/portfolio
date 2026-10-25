@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Link preview image</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Manrope:wght@500;600;700;800&display=swap" />
+  <style>
+    body { margin: 24px; font-family: Manrope, sans-serif; background: #f5f7f5; color: #202823; }
+    canvas { width: 600px; height: 315px; border: 1px solid #dfe5df; display: block; margin-bottom: 16px; }
+  </style>
+</head>
+<body>
+  <!-- Source for public/og-image.png. Open this file and click Download to regenerate it. -->
+  <canvas id="og" width="1200" height="630"></canvas>
+  <a id="download" download="og-image.png">Download og-image.png</a>
+  <script>
+    (async () => {
+      await Promise.all([
+        document.fonts.load('800 92px Manrope'),
+        document.fonts.load('700 42px Manrope'),
+        document.fonts.load('600 24px Manrope'),
+        document.fonts.load('500 32px Manrope'),
+      ]);
+      const W = 1200, H = 630;
+      const canvas = document.getElementById('og');
+      const x = canvas.getContext('2d');
+
+      x.fillStyle = '#ffffff';
+      x.fillRect(0, 0, W, H);
+      x.fillStyle = '#f5f7f5';
+      x.fillRect(0, H - 96, W, 96);
+      x.fillStyle = '#dfe5df';
+      x.fillRect(0, H - 96, W, 2);
+
+      // QH tile, same as the favicon
+      x.fillStyle = '#315e49';
+      x.beginPath();
+      x.roundRect(80, 80, 96, 96, 21);
+      x.fill();
+      x.fillStyle = '#ffffff';
+      x.font = '700 42px Manrope';
+      x.textAlign = 'center';
+      x.textBaseline = 'middle';
+      x.fillText('QH', 128, 130);
+
+      x.textAlign = 'left';
+      x.textBaseline = 'alphabetic';
+      x.fillStyle = '#315e49';
+      x.font = '600 24px Manrope';
+      x.letterSpacing = '3px';
+      x.fillText('SEATTLE, WA / SOFTWARE ENGINEER II AT MICROSOFT', 80, 260);
+
+      x.letterSpacing = '-3px';
+      x.fillStyle = '#202823';
+      x.font = '800 92px Manrope';
+      x.fillText('Quyen Huynh.', 76, 360);
+
+      x.letterSpacing = '0px';
+      x.fillStyle = '#626b65';
+      x.font = '500 32px Manrope';
+      x.fillText('I build AI systems that help enterprises', 80, 425);
+      x.fillText('classify and govern their data.', 80, 468);
+
+      x.fillStyle = '#315e49';
+      x.font = '700 26px Manrope';
+      x.fillText('quyenhuynh.com', 80, H - 38);
+
+      document.getElementById('download').href = canvas.toDataURL('image/png');
+    })();
+  </script>
+</body>
+</html>

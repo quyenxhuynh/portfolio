@@ -25,10 +25,10 @@ const Experience: React.FC = () => {
       company: 'Microsoft',
       period: '2021 - 2023',
       description: [
-        'Built Azure ML pipeline infrastructure covering the full model lifecycle: data extraction, training, validation, and scoring.',
-        'Created automated promotion gates that only ship a model when it beats the last-known-good baseline [TODO: impact, e.g. "removing manual sign-off from every release"].',
-        'Moved production pipelines onto daily schedules [TODO: from what cadence?], cutting manual MLOps work [TODO: by roughly how much?].',
-        '[TODO: one ownership bullet, e.g. a pipeline you designed, a migration you led, or engineers you onboarded.]'
+        'Built the Azure ML pipeline end to end, covering data extraction, training, validation, and scoring.',
+        'Replaced weekly, hand-run training and testing scripts with automated daily production pipelines.',
+        'Created promotion gates that only ship a model when it beats the last-known-good baseline, cutting manual review from each release.',
+        'Engineered high-volume data access between C# services and Python training code.'
       ],
       technologies: ['Python', 'C#', 'Azure ML', 'PySpark', 'Hadoop']
     },
@@ -38,12 +38,12 @@ const Experience: React.FC = () => {
       company: 'Microsoft',
       period: '2023 - Present',
       description: [
-        'Build AI-native classification services that help enterprises organize and govern their data [TODO: scale, e.g. "across thousands of tenants"].',
-        'Work across engineering and product to turn complex classification requirements into shipped features [TODO: name one you drove].',
-        'Maintain a multi-tenant architecture with strong tenant isolation and compliance controls.',
-        '[TODO: one ownership bullet, e.g. a design you led, a reliability or cost win, or engineers you mentor.]'
+        'Build AI-native classification services that help enterprises organize and govern their data, now in private preview with 20 enterprise tenants.',
+        'Added an embedding-model layer to the classification pipeline to reduce false positives.',
+        'Led synthetic data generation for benchmarking classification quality improvements.',
+        'Maintain a multi-tenant architecture with strong tenant isolation and compliance controls.'
       ],
-      technologies: ['C#', 'Python', 'pandas', 'NumPy']
+      technologies: ['C#', 'Python', 'Embeddings', 'pandas', 'NumPy']
     },
     // Add new experiences here at the end - they will appear at the top when displayed
   ];

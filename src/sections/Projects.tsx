@@ -12,16 +12,16 @@ const Projects: React.FC = () => {
       description: 'My desktop card-game simulator pairs playing a hand with looking at the numbers: gameplay analytics and performance tracking.',
       technologies: ['React', 'TypeScript', 'Vite', 'Tailwind CSS', 'Mantine UI'],
       // githubUrl: 'https://github.com/quyenxhuynh/electron-forge-template',
-      imageUrl: imagePath('card-simulation.png'),
+      imageUrl: imagePath('card-simulation.webp'),
       emoji: '⚡'
     },
     {
       id: '2',
       title: 'AI Connect Four',
       description: 'My take on Connect Four, with an AI opponent that searches ahead using minimax and alpha-beta pruning.',
-      technologies: ['Python', 'AI/ML', 'Minimax Algorithm', 'Game Theory'],
+      technologies: ['Python', 'Game AI', 'Minimax', 'Alpha-Beta Pruning'],
       githubUrl: 'https://github.com/quyenxhuynh/ai-connect4',
-      imageUrl: imagePath('ai-connect4.png'),
+      imageUrl: imagePath('ai-connect4.webp'),
       emoji: ''
     },
     {
@@ -30,34 +30,34 @@ const Projects: React.FC = () => {
       description: 'My recreation of Wordle, bringing together word-game logic, familiar mechanics, and a responsive interface.',
       technologies: ['JavaScript', 'HTML/CSS', 'Game Logic', 'Responsive Design'],
       githubUrl: 'https://github.com/quyenxhuynh/wordle-replica',
-      imageUrl: imagePath('wordle-replica.png'),
+      imageUrl: imagePath('wordle-replica.webp'),
       emoji: '🖋️'
     },
     {
       id: '4',
       title: 'Finder',
       description: 'A web project built around a simple idea: help people find activities they have in common.',
-      technologies: ['HTML', 'CSS', 'JavaScript', 'Web Development'],
+      technologies: ['HTML', 'CSS', 'JavaScript'],
       githubUrl: 'https://github.com/quyenxhuynh/finder',
-      imageUrl: imagePath('finder.png'),
+      imageUrl: imagePath('finder.webp'),
       emoji: '🔍'
     },
     {
       id: '5',
       title: 'invit.io',
       description: 'An event-planning project that brings invitations, scheduling, and keeping track of attendees into one place.',
-      technologies: ['PHP', 'Web Development', 'Database Design'],
+      technologies: ['PHP', 'Database Design'],
       githubUrl: 'https://github.com/quyenxhuynh/invit.io',
-      imageUrl: imagePath('invit-io.png'),
+      imageUrl: imagePath('invit-io.webp'),
       emoji: '🎉'
     },
     {
       id: '6',
       title: 'MCU Database',
       description: 'A little Marvel, a little SQL. This project puts a relational database behind exploring and querying the Marvel universe.',
-      technologies: ['JavaScript', 'Database Systems', 'SQL', 'Web Development'],
+      technologies: ['JavaScript', 'Database Systems', 'SQL'],
       githubUrl: 'https://github.com/quyenxhuynh/mcu',
-      imageUrl: imagePath('mcu-database.png'),
+      imageUrl: imagePath('mcu-database.webp'),
       emoji: '🦸'
     }
   ];

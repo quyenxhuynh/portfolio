@@ -1,14 +1,14 @@
 # Portfolio Website
 
-A modern, responsive portfolio website built with React, Vite, and TypeScript. Features a single-page application with smooth scrolling navigation between sections.
+A modern, responsive portfolio website built with React, Vite, and TypeScript. Features a single-page application with smooth scrolling navigation between sections. Live at [quyenhuynh.com](https://quyenhuynh.com).
 
 ## Features
 
-- ✨ **Modern Tech Stack**: Built with React 18, TypeScript, and Vite for fast development
+- ✨ **Modern Tech Stack**: Built with React 19, TypeScript, and Vite for fast development
 - 🎯 **Single Page Application**: Smooth scrolling navigation between sections
 - 📱 **Fully Responsive**: Optimized for desktop, tablet, and mobile devices
 - 🎨 **Clean Design**: White and charcoal surfaces, a muted green accent, generous spacing, and responsive project grids
-- ⚡ **Performance Optimized**: Fast loading times with Vite's build optimization
+- ⚡ **Performance Optimized**: Lazy-loaded sections and WebP project images
 - 🛡️ **Type Safe**: Full TypeScript implementation for better code quality
 
 ## Sections
@@ -24,35 +24,35 @@ A modern, responsive portfolio website built with React, Vite, and TypeScript. F
 
 ### Prerequisites
 
-- Node.js (version 16 or higher)
-- npm or yarn
+- Node.js 20 or higher
+- [pnpm](https://pnpm.io) 9
 
 ### Installation
 
 1. Clone the repository:
    ```bash
-   git clone <repository-url>
+   git clone https://github.com/quyenxhuynh/portfolio.git
    cd portfolio
    ```
 
 2. Install dependencies:
    ```bash
-   npm install
+   pnpm install
    ```
 
 3. Start the development server:
    ```bash
-   npm run dev
+   pnpm dev
    ```
 
 4. Open your browser and visit `http://localhost:5173`
 
 ## Available Scripts
 
-- `npm run dev` - Start the development server
-- `npm run build` - Build the project for production
-- `npm run preview` - Preview the production build locally
-- `npm run lint` - Run ESLint for code quality checks
+- `pnpm dev` - Start the development server
+- `pnpm build` - Type-check and build the project for production
+- `pnpm preview` - Preview the production build locally
+- `pnpm lint` - Run ESLint for code quality checks
 
 ## Customization
 
@@ -63,7 +63,13 @@ Update the following files with your personal information:
 1. **src/sections/Home.tsx**: Update name, title, and description
 2. **src/sections/About.tsx**: Update bio, skills, and personal details
 3. **src/sections/Experience.tsx**: Update work experience and achievements
-4. **src/sections/Projects.tsx**: Update project information, links, and descriptions
+4. **src/sections/Teaching.tsx**: Update teaching roles
+5. **src/sections/Education.tsx**: Update degrees and coursework
+6. **src/sections/Projects.tsx**: Update project information, links, and descriptions
+
+### Project Images
+
+Project screenshots live in `public/images/` as WebP files, about 1200px wide.
 
 ### Styling
 
@@ -76,46 +82,46 @@ Update the following files with your personal information:
 
 1. Create a new component in `src/sections/`
 2. Add the corresponding CSS file
-3. Update the navigation in `src/App.tsx`
-4. Add the section to the navigation items array
+3. Render the section in `src/App.tsx`
+4. Add the section to the `NAV_ITEMS` array in `src/App.tsx`
 
 ## Project Structure
 
 ```
+public/
+├── CNAME                # Custom domain for GitHub Pages
+└── images/              # Project screenshots (WebP)
 src/
 ├── components/          # Reusable components
-│   └── Navigation.tsx   # Main navigation component
+│   ├── Navigation.tsx   # Main navigation and mobile menu
+│   └── Footer.tsx       # Page footer
 ├── sections/            # Page sections
-│   ├── Home.tsx        # Hero section
-│   ├── About.tsx       # About me section
-│   ├── Experience.tsx  # Work experience timeline
-│   └── Projects.tsx    # Projects showcase
-├── types/              # TypeScript type definitions
-├── utils/              # Utility functions
-└── App.tsx             # Main application component
+│   ├── Home.tsx         # Hero section
+│   ├── About.tsx        # About me section
+│   ├── Experience.tsx   # Work experience timeline
+│   ├── Teaching.tsx     # Teaching experience
+│   ├── Education.tsx    # Education history
+│   └── Projects.tsx     # Projects showcase
+├── types/               # TypeScript type definitions
+├── utils/               # Utility functions
+└── App.tsx              # Main application component
 ```
 
 ## Deployment
 
-### Build for Production
+Every push to `main` builds the site and deploys it to GitHub Pages via the workflow in `.github/workflows/deploy.yml`. The custom domain is set by `public/CNAME`, which Vite copies into the build.
+
+To build locally:
 
 ```bash
-npm run build
+pnpm build
 ```
 
 The build artifacts will be stored in the `dist/` directory.
 
-### Deploy to Netlify, Vercel, or GitHub Pages
-
-This project is ready to be deployed to any static hosting service:
-
-- **Netlify**: Connect your repository and set build command to `npm run build` and publish directory to `dist`
-- **Vercel**: Import your repository and Vercel will automatically detect the Vite configuration
-- **GitHub Pages**: Use GitHub Actions to build and deploy the `dist` folder
-
 ## Technologies Used
 
-- **React 18** - UI library
+- **React 19** - UI library
 - **TypeScript** - Type safety
 - **Vite** - Build tool and development server
 - **CSS3** - Styling with modern features
@@ -127,7 +133,3 @@ This project is ready to be deployed to any static hosting service:
 - Firefox (latest)
 - Safari (latest)
 - Edge (latest)
-
-## License
-
-This project is open source and available under the [MIT License](LICENSE).

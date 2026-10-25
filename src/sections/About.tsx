@@ -39,7 +39,7 @@ const About: React.FC = () => {
             </p>
             <p>
               Outside of work, I'm usually traveling, hunting down new foods, or at a
-              concert. In 2026 alone: Ariana Grande, Bruno Mars, Olivia Rodrigo, and
+              concert. Recent shows: Ariana Grande, Bruno Mars, Olivia Rodrigo, and
               more. I'm always learning something, whether it's science or a new
               language, and I've played a handful of instruments over the years.
             </p>

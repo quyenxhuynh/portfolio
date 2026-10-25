@@ -16,9 +16,9 @@ A modern, responsive portfolio website built with React, Vite, and TypeScript. F
 - **Home**: Hero section with introduction and call-to-action buttons
 - **About**: Personal information and skills showcase
 - **Experience**: Professional timeline with detailed work history
-- **Teaching**: Teaching roles and mentoring experience
+- **Teaching**: Teaching roles, mentoring, and volunteer work
 - **Education**: Degrees and continued learning
-- **Projects**: Portfolio of development projects with live demos and source code
+- **Projects**: Side projects with links to their source code
 
 ## Getting Started
 
@@ -63,7 +63,7 @@ Update the following files with your personal information:
 1. **src/sections/Home.tsx**: Update name, title, and description
 2. **src/sections/About.tsx**: Update bio, skills, and personal details
 3. **src/sections/Experience.tsx**: Update work experience and achievements
-4. **src/sections/Teaching.tsx**: Update teaching roles
+4. **src/sections/Teaching.tsx**: Update teaching roles and volunteer work
 5. **src/sections/Education.tsx**: Update degrees and coursework
 6. **src/sections/Projects.tsx**: Update project information, links, and descriptions
 
@@ -99,7 +99,7 @@ src/
 │   ├── Home.tsx         # Hero section
 │   ├── About.tsx        # About me section
 │   ├── Experience.tsx   # Work experience timeline
-│   ├── Teaching.tsx     # Teaching experience
+│   ├── Teaching.tsx     # Teaching, mentoring, and volunteering
 │   ├── Education.tsx    # Education history
 │   └── Projects.tsx     # Projects showcase
 ├── types/               # TypeScript type definitions

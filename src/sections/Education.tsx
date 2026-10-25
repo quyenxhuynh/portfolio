@@ -14,10 +14,7 @@ const Education: React.FC = () => {
       coursework: [
         'Data Structures & Algorithms',
         'Software Development Methods',
-        'Database Systems',
-        'Web Programming',
-        'Computer Systems & Organization',
-        'Machine Learning Fundamentals'
+        'Database Systems'
       ]
     },
     {

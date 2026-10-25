@@ -40,8 +40,8 @@ const Experience: React.FC = () => {
       description: [
         'Build AI-native classification services that help enterprises organize and govern their data, now in private preview with 20 enterprise tenants.',
         'Added an embedding-model layer to the classification pipeline to reduce false positives.',
-        'Led synthetic data generation for benchmarking classification quality improvements.',
-        'Maintain a multi-tenant architecture with strong tenant isolation and compliance controls.'
+        'Led synthetic data generation for benchmarking classification quality: 10,000 samples per model across 10 document types and 8 languages.',
+        'Maintain a multi-tenant architecture that classifies billions of documents a day, with strong tenant isolation and compliance controls.'
       ],
       technologies: ['C#', 'Python', 'Embeddings', 'pandas', 'NumPy']
     },

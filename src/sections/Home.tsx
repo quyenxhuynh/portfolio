@@ -6,37 +6,34 @@ const Home: React.FC = () => {
     <section id="home" className="home">
       <div className="home__container">
         <div className="home__content">
-          <p className="home__kicker">Software Engineer II at Microsoft</p>
+          <p className="home__kicker">Seattle, WA / Software Engineer II at Microsoft</p>
           <h1 className="home__title">
-            Hi, I'm <span className="home__name">Quyen</span>!
+            Hi, I'm <span className="home__name">Quyen Huynh.</span>
           </h1>
-          <h2 className="home__subtitle">Software Engineer</h2>
+          <p className="home__subtitle">An engineer with a teaching background.</p>
           <p className="home__description">
-            I build AI-native classification systems for enterprise data, with a focus on
-            scalable architecture, trustworthy automation, and measurable user impact.
+            At Microsoft, I build AI systems that help teams classify their data.
+            My work has also taken me into programming labs, office hours, and
+            mentoring other teaching assistants. This is a little of both sides of me.
           </p>
-          <div className="home__highlights" aria-label="Career highlights">
-            <span className="home__highlight">AI-native Classification</span>
-            <span className="home__highlight">Enterprise AI</span>
-            <span className="home__highlight">Multi-tenant Systems</span>
-          </div>
           <div className="home__cta">
             <a href="#projects" className="btn btn--primary">
-              View My Work
+              Explore my projects <span aria-hidden="true">&rarr;</span>
             </a>
             <a href="#about" className="btn btn--secondary">
-              Learn More
+              A little about me
             </a>
           </div>
         </div>
-        <div className="home__visual">
-          <div className="home__avatar">
-            {/* Placeholder for profile image */}
-            <div className="home__avatar-placeholder">
-              👩🏻‍💻
-            </div>
-          </div>
-        </div>
+        <aside className="home__note" aria-labelledby="home-note-title">
+          <p className="home__note-label">Another part of my story</p>
+          <h2 id="home-note-title">From office hours<br />to production systems.</h2>
+          <p>
+            Before my work in enterprise AI, I led introductory programming labs
+            at UVA. Teaching is part of my engineering story, too.
+          </p>
+          <a href="#teaching">My teaching experience <span aria-hidden="true">&rarr;</span></a>
+        </aside>
       </div>
     </section>
   );

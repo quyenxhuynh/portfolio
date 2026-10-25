@@ -42,14 +42,6 @@ const Navigation: React.FC<NavigationProps> = ({ items }) => {
   }, []);
 
   useEffect(() => {
-    const sectionElements = items
-      .map((item) => document.getElementById(item.id))
-      .filter((element): element is HTMLElement => element !== null);
-
-    if (!sectionElements.length) {
-      return;
-    }
-
     const observer = new IntersectionObserver(
       (entries) => {
         let bestEntry: IntersectionObserverEntry | null = null;
@@ -72,14 +64,31 @@ const Navigation: React.FC<NavigationProps> = ({ items }) => {
       {
         root: null,
         rootMargin: '-42% 0px -42% 0px',
-        threshold: [0.25, 0.6],
+        threshold: 0,
       },
     );
 
-    sectionElements.forEach((element) => observer.observe(element));
+    const observedSections = new Set<HTMLElement>();
+    const observeSections = () => {
+      items.forEach((item) => {
+        const element = document.getElementById(item.id);
+        if (element && !observedSections.has(element)) {
+          observer.observe(element);
+          observedSections.add(element);
+        }
+      });
+    };
+
+    observeSections();
+    const contentObserver = new MutationObserver(observeSections);
+    const main = document.querySelector('main');
+    if (main) {
+      contentObserver.observe(main, { childList: true, subtree: true });
+    }
 
     return () => {
       observer.disconnect();
+      contentObserver.disconnect();
     };
   }, [items]);
 
@@ -169,7 +178,7 @@ const Navigation: React.FC<NavigationProps> = ({ items }) => {
   };
 
   return (
-    <nav className={`navigation ${isScrolled ? 'navigation--scrolled' : ''}`} ref={navRef}>
+    <nav aria-label="Main navigation" className={`navigation ${isScrolled ? 'navigation--scrolled' : ''}`} ref={navRef}>
       <div className="navigation__container">
         <div className="navigation__top-row">
           <div className="navigation__logo">
@@ -183,6 +192,7 @@ const Navigation: React.FC<NavigationProps> = ({ items }) => {
             className={`navigation__toggle ${isMenuOpen ? 'navigation__toggle--open' : ''}`}
             aria-label="Toggle navigation menu"
             aria-expanded={isMenuOpen}
+            aria-controls="navigation-menu"
             onClick={() => setIsMenuOpen((prev) => !prev)}
           >
             <span></span>
@@ -190,12 +200,13 @@ const Navigation: React.FC<NavigationProps> = ({ items }) => {
             <span></span>
           </button>
         </div>
-        <ul className={`navigation__list ${isMenuOpen ? 'navigation__list--open' : ''}`}>
+        <ul id="navigation-menu" className={`navigation__list ${isMenuOpen ? 'navigation__list--open' : ''}`}>
           {items.map((item) => (
             <li key={item.id} className="navigation__item">
               <a
                 ref={item.id === items[0]?.id ? firstMenuLinkRef : undefined}
                 href={item.href}
+                aria-current={activeSection === item.id ? 'location' : undefined}
                 className={`navigation__link ${
                   activeSection === item.id ? 'navigation__link--active' : ''
                 }`}

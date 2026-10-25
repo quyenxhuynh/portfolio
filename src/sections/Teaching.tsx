@@ -44,6 +44,7 @@ const Teaching: React.FC = () => {
     <section id="teaching" className="teaching">
       <div className="teaching__container">
         <div className="teaching__header">
+          <p className="section-label">03 / Sharing what I know</p>
           <h2 className="section-title">Teaching Experience</h2>
         </div>
         

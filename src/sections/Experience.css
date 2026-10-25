@@ -1,165 +1,81 @@
-.experience {
-  padding: 6.4rem 2rem;
-  background: transparent;
-}
-
-.experience__container {
-  max-width: 1020px;
-  margin: 0 auto;
-}
-
-.experience__header {
-  text-align: center;
-  margin-bottom: 4.4rem;
-}
-
-.timeline {
-  position: relative;
-  padding-left: 0.2rem;
-}
-
-.timeline::before {
-  content: '';
-  position: absolute;
-  left: 0.95rem;
-  top: 0.1rem;
-  bottom: 0.1rem;
-  width: 2px;
-  background: linear-gradient(to bottom, rgba(47, 107, 255, 0.4), rgba(255, 107, 53, 0.45));
-}
-
 .timeline-item {
-  position: relative;
-  margin-bottom: 2rem;
+  border-top: 1px solid var(--stroke);
+  padding: 2.25rem 0;
 }
 
-.timeline-content {
-  margin-left: 2.5rem;
-}
-
-.timeline-marker {
-  position: absolute;
-  left: 0.95rem;
-  top: 1.3rem;
-  width: 14px;
-  height: 14px;
-  border-radius: 50%;
-  transform: translateX(-50%);
-  background: linear-gradient(120deg, #2f6bff, #ff6b35);
-  box-shadow: 0 0 0 5px rgba(47, 107, 255, 0.16);
-  z-index: 2;
+.timeline-item:last-child {
+  padding-bottom: 0;
 }
 
 .experience-card {
-  background: rgba(255, 255, 255, 0.76);
-  border: 1px solid rgba(15, 23, 42, 0.08);
-  border-radius: 1.2rem;
-  box-shadow: 0 18px 40px rgba(19, 29, 50, 0.09);
-  backdrop-filter: blur(8px);
-  padding: 1.85rem;
-  transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
-}
-
-.experience-card:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 24px 44px rgba(19, 29, 50, 0.13);
-  border-color: rgba(47, 107, 255, 0.26);
+  display: grid;
+  grid-template-columns: 230px minmax(0, 1fr);
+  gap: 0.75rem 4rem;
 }
 
 .experience-header {
   display: flex;
-  justify-content: space-between;
-  align-items: flex-start;
-  gap: 0.8rem;
-  margin-bottom: 0.4rem;
+  flex-direction: column;
+  gap: 0.65rem;
+  grid-column: 1;
+  grid-row: 1 / 3;
 }
 
 .experience-title {
-  font-size: 1.42rem;
-  font-weight: 760;
-  color: #111827;
-  letter-spacing: -0.02em;
+  font-size: 1.15rem;
+  font-weight: 600;
+  letter-spacing: -0.025em;
 }
 
 .experience-period {
-  color: #1f3165;
-  background: rgba(47, 107, 255, 0.12);
-  border: 1px solid rgba(47, 107, 255, 0.2);
-  border-radius: 999px;
-  font-size: 0.82rem;
-  font-weight: 700;
-  padding: 0.35rem 0.75rem;
-  white-space: nowrap;
+  color: var(--text-muted);
+  font-size: 0.8rem;
 }
 
 .experience-company {
-  font-size: 1.03rem;
-  font-weight: 650;
-  color: #5b6477;
-  margin-bottom: 1rem;
+  grid-column: 2;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--brand);
 }
 
 .experience-description {
-  list-style: disc;
-  padding-left: 1.2rem;
-  margin: 0 0 1.25rem 0;
+  grid-column: 2;
+  padding-left: 1rem;
+  margin: 0;
 }
 
 .experience-description li {
-  color: #3d4a62;
-  line-height: 1.72;
-  margin-bottom: 0.65rem;
+  color: var(--text-muted);
+  font-size: 0.9rem;
+  line-height: 1.8;
+  margin-bottom: 0.4rem;
+  padding-left: 0.25rem;
 }
 
 .experience-description li::marker {
-  color: #ff6b35;
+  color: #8b9b90;
 }
 
 .experience-technologies {
+  grid-column: 2;
   display: flex;
   flex-wrap: wrap;
-  gap: 0.5rem;
-}
-
-.tech-tag {
-  background: rgba(255, 255, 255, 0.88);
-  border: 1px solid rgba(15, 23, 42, 0.1);
-  color: #2f3d57;
-  padding: 0.34rem 0.8rem;
-  border-radius: 999px;
-  font-size: 0.83rem;
-  font-weight: 600;
-  transition: transform 0.2s ease, border-color 0.2s ease;
-}
-
-.tech-tag:hover {
-  transform: translateY(-1px);
-  border-color: rgba(47, 107, 255, 0.32);
+  gap: 0.4rem;
+  margin-top: 0.5rem;
 }
 
 @media (max-width: 768px) {
-  .experience {
-    padding: 4.5rem 1rem;
-  }
-
-  .experience__header {
-    margin-bottom: 3.2rem;
-  }
-
-  .timeline-content {
-    margin-left: 2.1rem;
-  }
-
   .experience-card {
-    padding: 1.35rem;
+    grid-template-columns: 1fr;
+    gap: 1rem;
   }
 
-  .experience-header {
-    flex-direction: column;
-    align-items: flex-start;
-  }
-
-  .experience-title {
-    font-size: 1.2rem;
+  .experience-header,
+  .experience-company,
+  .experience-description,
+  .experience-technologies {
+    grid-column: 1;
+    grid-row: auto;
   }
 }

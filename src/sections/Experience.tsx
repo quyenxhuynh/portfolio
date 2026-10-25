@@ -52,6 +52,7 @@ const Experience: React.FC = () => {
     <section id="experience" className="experience">
       <div className="experience__container">
         <div className="experience__header">
+          <p className="section-label">02 / Where I've been</p>
           <h2 className="section-title">Experience</h2>
         </div>
         

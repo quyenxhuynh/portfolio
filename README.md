@@ -7,7 +7,7 @@ A modern, responsive portfolio website built with React, Vite, and TypeScript. F
 - ✨ **Modern Tech Stack**: Built with React 18, TypeScript, and Vite for fast development
 - 🎯 **Single Page Application**: Smooth scrolling navigation between sections
 - 📱 **Fully Responsive**: Optimized for desktop, tablet, and mobile devices
-- 🎨 **Clean Design**: Modern UI with gradient backgrounds and smooth animations
+- 🎨 **Clean Design**: White and charcoal surfaces, a muted green accent, generous spacing, and responsive project grids
 - ⚡ **Performance Optimized**: Fast loading times with Vite's build optimization
 - 🛡️ **Type Safe**: Full TypeScript implementation for better code quality
 
@@ -16,6 +16,8 @@ A modern, responsive portfolio website built with React, Vite, and TypeScript. F
 - **Home**: Hero section with introduction and call-to-action buttons
 - **About**: Personal information and skills showcase
 - **Experience**: Professional timeline with detailed work history
+- **Teaching**: Teaching roles and mentoring experience
+- **Education**: Degrees and continued learning
 - **Projects**: Portfolio of development projects with live demos and source code
 
 ## Getting Started
@@ -67,7 +69,8 @@ Update the following files with your personal information:
 
 - **Global styles**: `src/index.css` and `src/App.css`
 - **Component styles**: Each section has its own CSS file for easy customization
-- **Color scheme**: Update CSS custom properties in `src/index.css` for theme changes
+- **Color scheme**: Update CSS custom properties in `src/App.css` for theme changes
+- **Accessibility**: Keyboard-visible focus states, a skip-to-content link, an accessible mobile menu, and reduced-motion support
 
 ### Adding New Sections
 

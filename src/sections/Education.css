@@ -1,120 +1,63 @@
-.education {
-  padding: 6rem 2rem;
-  background: transparent;
-}
-
-.education__container {
-  max-width: 920px;
-  margin: 0 auto;
-}
-
-.education__header {
-  text-align: center;
-  margin-bottom: 4rem;
-}
-
 .education-grid {
   display: grid;
-  gap: 1rem;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 2rem;
 }
 
 .education-item {
-  background: rgba(255, 255, 255, 0.76);
-  border: 1px solid rgba(15, 23, 42, 0.08);
-  border-radius: 1.2rem;
-  box-shadow: 0 16px 34px rgba(19, 29, 50, 0.08);
-  padding: 1.6rem;
-  transition: transform 0.24s ease, box-shadow 0.24s ease;
-}
-
-.education-item:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 20px 40px rgba(19, 29, 50, 0.12);
-}
-
-.education-item.bachelor {
-  border-color: rgba(47, 107, 255, 0.3);
-  background:
-    linear-gradient(120deg, rgba(47, 107, 255, 0.06), rgba(255, 126, 76, 0.05)),
-    rgba(255, 255, 255, 0.85);
-}
-
-.education-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-start;
-  gap: 0.8rem;
-  margin-bottom: 0.55rem;
+  border-top: 1px solid var(--stroke);
+  padding-top: 1.5rem;
 }
 
 .education-title {
-  font-size: 1.26rem;
-  font-weight: 740;
-  color: #111827;
-  letter-spacing: -0.02em;
+  font-size: 1.05rem;
+  font-weight: 600;
+  line-height: 1.5;
+  letter-spacing: -0.025em;
+  margin-bottom: 1rem;
 }
 
 .education-period {
-  color: #1f3165;
-  background: rgba(47, 107, 255, 0.12);
-  border: 1px solid rgba(47, 107, 255, 0.2);
-  border-radius: 999px;
-  font-size: 0.79rem;
-  font-weight: 700;
-  padding: 0.32rem 0.7rem;
-  white-space: nowrap;
+  font-size: 0.75rem;
+  color: var(--text-muted);
 }
 
 .education-school {
-  color: #5b6477;
-  font-size: 1rem;
-  margin-bottom: 0.65rem;
-  font-weight: 620;
+  color: var(--brand);
+  font-size: 0.85rem;
+  font-weight: 500;
+  margin: 1rem 0 0.5rem;
 }
 
 .education-gpa {
-  margin-bottom: 0.8rem;
-  color: #ff6b35;
-  font-size: 0.9rem;
+  color: var(--text-muted);
+  font-size: 0.78rem;
+}
+
+.education-gpa strong {
+  font-weight: 500;
+}
+
+.education-section {
+  margin-top: 1.5rem;
 }
 
 .education-section-title {
-  font-size: 0.9rem;
-  font-weight: 700;
-  color: #26324d;
-  margin-bottom: 0.45rem;
+  font-size: 0.75rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
 }
 
 .coursework-list {
-  list-style: disc;
   padding-left: 1rem;
-}
-
-.coursework-list li {
-  font-size: 0.92rem;
-  color: #3f4d67;
-  line-height: 1.65;
-  margin-bottom: 0.3rem;
+  margin: 0;
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  line-height: 1.9;
 }
 
 @media (max-width: 768px) {
-  .education {
-    padding: 4.5rem 1rem;
-  }
-
-  .education__header {
-    margin-bottom: 3rem;
-  }
-
-  .education-item {
-    padding: 1.25rem;
-  }
-
-  .education-header {
-    flex-direction: column;
-  }
-
-  .education-title {
-    font-size: 1.1rem;
+  .education-grid {
+    grid-template-columns: 1fr;
   }
 }

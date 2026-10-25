@@ -23,8 +23,9 @@ const NAV_ITEMS: NavItem[] = [
 function App() {
   return (
     <div className="app">
+      <a className="skip-link" href="#main-content">Skip to content</a>
       <Navigation items={NAV_ITEMS} />
-      <main>
+      <main id="main-content" tabIndex={-1}>
         <Home />
         <About />
         <Suspense fallback={null}>

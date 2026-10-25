@@ -9,7 +9,7 @@ const Projects: React.FC = () => {
     {
       id: '1',
       title: 'Card Simulator',
-      description: 'Desktop card-game simulator with gameplay analytics and performance tracking.',
+      description: 'My desktop card-game simulator pairs playing a hand with looking at the numbers: gameplay analytics and performance tracking.',
       technologies: ['React', 'TypeScript', 'Vite', 'Tailwind CSS', 'Mantine UI'],
       // githubUrl: 'https://github.com/quyenxhuynh/electron-forge-template',
       imageUrl: imagePath('card-simulation.png'),
@@ -18,7 +18,7 @@ const Projects: React.FC = () => {
     {
       id: '2',
       title: 'AI Connect Four',
-      description: 'Connect Four game with a minimax + alpha-beta AI opponent for strategic play.',
+      description: 'My take on Connect Four, with an AI opponent that searches ahead using minimax and alpha-beta pruning.',
       technologies: ['Python', 'AI/ML', 'Minimax Algorithm', 'Game Theory'],
       githubUrl: 'https://github.com/quyenxhuynh/ai-connect4',
       imageUrl: imagePath('ai-connect4.png'),
@@ -27,7 +27,7 @@ const Projects: React.FC = () => {
     {
       id: '3',
       title: 'Wordle Replica',
-      description: 'Polished Wordle clone with faithful mechanics and additional quality-of-life features.',
+      description: 'My recreation of Wordle, bringing together word-game logic, familiar mechanics, and a responsive interface.',
       technologies: ['JavaScript', 'HTML/CSS', 'Game Logic', 'Responsive Design'],
       githubUrl: 'https://github.com/quyenxhuynh/wordle-replica',
       imageUrl: imagePath('wordle-replica.png'),
@@ -36,7 +36,7 @@ const Projects: React.FC = () => {
     {
       id: '4',
       title: 'Finder',
-      description: 'Interest-matching web app designed to help users discover shared activities.',
+      description: 'A web project built around a simple idea: help people find activities they have in common.',
       technologies: ['HTML', 'CSS', 'JavaScript', 'Web Development'],
       githubUrl: 'https://github.com/quyenxhuynh/finder',
       imageUrl: imagePath('finder.png'),
@@ -45,7 +45,7 @@ const Projects: React.FC = () => {
     {
       id: '5',
       title: 'invit.io',
-      description: 'Event invitation and management platform with scheduling and attendee workflows.',
+      description: 'An event-planning project that brings invitations, scheduling, and keeping track of attendees into one place.',
       technologies: ['PHP', 'Web Development', 'Database Design'],
       githubUrl: 'https://github.com/quyenxhuynh/invit.io',
       imageUrl: imagePath('invit-io.png'),
@@ -54,7 +54,7 @@ const Projects: React.FC = () => {
     {
       id: '6',
       title: 'MCU Database',
-      description: 'Relational database project for exploring and querying Marvel universe data.',
+      description: 'A little Marvel, a little SQL. This project puts a relational database behind exploring and querying the Marvel universe.',
       technologies: ['JavaScript', 'Database Systems', 'SQL', 'Web Development'],
       githubUrl: 'https://github.com/quyenxhuynh/mcu',
       imageUrl: imagePath('mcu-database.png'),
@@ -66,12 +66,19 @@ const Projects: React.FC = () => {
     <section id="projects" className="projects">
       <div className="projects__container">
         <div className="projects__header">
-          <h2 className="section-title">Projects</h2>
+          <div>
+            <p className="section-label">05 / Selected projects</p>
+            <h2 className="section-title">Things I've built</h2>
+          </div>
+          <p className="projects__intro">
+            Not everything here is enterprise AI. There are games, tools for
+            bringing people together, and a trip into the Marvel universe.
+          </p>
         </div>
         
         <div className="projects-grid">
-          {projects.map((project) => (
-            <div key={project.id} className="project-card">
+          {projects.map((project, index) => (
+            <article key={project.id} className="project-card">
               <div className="project-image">
                 {project.imageUrl ? (
                   <img 
@@ -94,34 +101,13 @@ const Projects: React.FC = () => {
                 <div className="project-image-placeholder" style={{display: project.imageUrl ? 'none' : 'flex'}}>
                   {project.emoji || '🚀'}
                 </div>
-                <div className="project-overlay">
-                  <div className="project-links">
-                    {project.liveUrl && (
-                      <a 
-                        href={project.liveUrl} 
-                        target="_blank" 
-                        rel="noopener noreferrer"
-                        className="project-link project-link--live"
-                      >
-                        Live Demo
-                      </a>
-                    )}
-                    {project.githubUrl && (
-                      <a 
-                        href={project.githubUrl} 
-                        target="_blank" 
-                        rel="noopener noreferrer"
-                        className="project-link project-link--github"
-                      >
-                        View Code
-                      </a>
-                    )}
-                  </div>
-                </div>
               </div>
               
               <div className="project-content">
-                <h3 className="project-title">{project.title}</h3>
+                <div className="project-heading">
+                  <span className="project-number" aria-hidden="true">{String(index + 1).padStart(2, '0')}</span>
+                  <h3 className="project-title">{project.title}</h3>
+                </div>
                 <p className="project-description">{project.description}</p>
                 
                 <div className="project-technologies">
@@ -131,8 +117,34 @@ const Projects: React.FC = () => {
                     </span>
                   ))}
                 </div>
+                {(project.liveUrl || project.githubUrl) && (
+                  <div className="project-links">
+                    {project.liveUrl && (
+                      <a
+                        href={project.liveUrl}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="project-link"
+                        aria-label={`Live demo of ${project.title} (opens in a new tab)`}
+                      >
+                        Live demo <span aria-hidden="true">&nearr;</span>
+                      </a>
+                    )}
+                    {project.githubUrl && (
+                      <a
+                        href={project.githubUrl}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="project-link"
+                        aria-label={`View code for ${project.title} (opens in a new tab)`}
+                      >
+                        View code <span aria-hidden="true">&nearr;</span>
+                      </a>
+                    )}
+                  </div>
+                )}
               </div>
-            </div>
+            </article>
           ))}
         </div>
       </div>

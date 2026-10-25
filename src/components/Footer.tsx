@@ -10,6 +10,7 @@ const Footer: React.FC = () => {
         <p className="footer__text">
           Made with love from Seattle • {currentYear}
         </p>
+        <a className="footer__link" href="#home">Back to top <span aria-hidden="true">&uarr;</span></a>
       </div>
     </footer>
   );

@@ -21,7 +21,7 @@ const Experience: React.FC = () => {
       id: 'exp-2021-msft',
       title: 'Software Engineer',
       company: 'Microsoft',
-      period: '2021 - 2023',
+      period: 'Aug 2021 - Aug 2023',
       description: [
         'Built the Azure ML pipeline end to end, covering data extraction, training, validation, and scoring.',
         'Replaced weekly, hand-run training and testing scripts with automated daily production pipelines.',
@@ -34,7 +34,7 @@ const Experience: React.FC = () => {
       id: 'exp-2023-msft',
       title: 'Software Engineer II',
       company: 'Microsoft',
-      period: '2023 - Present',
+      period: 'Sep 2023 - Present',
       description: [
         'Build AI-native classification services that help enterprises organize and govern their data, now in private preview with 20 enterprise tenants.',
         'Added an embedding-model layer to the classification pipeline to reduce false positives.',

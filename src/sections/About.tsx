@@ -35,8 +35,13 @@ const About: React.FC = () => {
             <p>
               I do my best work when I own a problem end to end: shaping the design,
               working through trade-offs with product and partner teams, and helping
-              the people around me get up to speed. [TODO: one or two lines about you
-              outside work.]
+              the people around me get up to speed.
+            </p>
+            <p>
+              Outside of work, I'm usually traveling, hunting down new foods, or at a
+              concert. In 2026 alone: Ariana Grande, Bruno Mars, Olivia Rodrigo, and
+              more. I'm always learning something, whether it's science or a new
+              language, and I've played a handful of instruments over the years.
             </p>
           </div>
           

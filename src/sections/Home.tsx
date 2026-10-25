@@ -1,5 +1,5 @@
 import React from 'react';
-import { CONTACT_LINKS } from '../data/contact';
+import { CONTACT_LINKS, isExternal } from '../data/contact';
 import './Home.css';
 
 const Home: React.FC = () => {
@@ -28,14 +28,18 @@ const Home: React.FC = () => {
           <ul className="home__links" aria-label="Find me online">
             {CONTACT_LINKS.map((link) => (
               <li key={link.id}>
-                <a
-                  href={link.href}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  aria-label={`${link.label} (opens in a new tab)`}
-                >
-                  {link.label} <span aria-hidden="true">↗</span>
-                </a>
+                {isExternal(link.href) ? (
+                  <a
+                    href={link.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label={`${link.label} (opens in a new tab)`}
+                  >
+                    {link.label} <span aria-hidden="true">↗</span>
+                  </a>
+                ) : (
+                  <a href={link.href}>{link.label}</a>
+                )}
               </li>
             ))}
           </ul>

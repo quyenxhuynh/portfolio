@@ -1,5 +1,5 @@
 import React from 'react';
-import { CONTACT_LINKS } from '../data/contact';
+import { CONTACT_LINKS, isExternal } from '../data/contact';
 import './Footer.css';
 
 const Footer: React.FC = () => {
@@ -14,15 +14,19 @@ const Footer: React.FC = () => {
         <ul className="footer__links" aria-label="Find me online">
           {CONTACT_LINKS.map((link) => (
             <li key={link.id}>
-              <a
-                className="footer__link"
-                href={link.href}
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label={`${link.label} (opens in a new tab)`}
-              >
-                {link.label}
-              </a>
+              {isExternal(link.href) ? (
+                <a
+                  className="footer__link"
+                  href={link.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label={`${link.label} (opens in a new tab)`}
+                >
+                  {link.label}
+                </a>
+              ) : (
+                <a className="footer__link" href={link.href}>{link.label}</a>
+              )}
             </li>
           ))}
           <li>

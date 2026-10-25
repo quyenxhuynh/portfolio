@@ -36,6 +36,13 @@ jobs:
       - name: Install dependencies
         run: pnpm install
         
+      - name: Check for unfinished copy
+        run: |
+          if grep -rn "\[TODO" src; then
+            echo "Fill in or remove the [TODO] placeholders above before deploying."
+            exit 1
+          fi
+
       - name: Build
         run: pnpm run build
         

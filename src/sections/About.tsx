@@ -4,8 +4,8 @@ import './About.css';
 const About: React.FC = () => {
   const skills = [
     'C#', '.NET', 'Python',
-    'HTML/CSS', 'JavaScript', 'TypeScript',
-    'React', 'Vite', 'Next.JS',
+    'SQL', 'PySpark', 'pandas',
+    'Azure ML', 'TypeScript', 'React',
   ];
 
   return (
@@ -18,23 +18,25 @@ const About: React.FC = () => {
         
         <div className="about__content">
           <div className="about__text">
-            <h3 className="about__heading">A little more than a job title.</h3>
+            <h3 className="about__heading">The model is only one piece.</h3>
             <p>
               I'm Quyen, a software engineer based in Seattle. At Microsoft, I work
-              on AI-native classification: helping teams organize enterprise data
-              through automation they can trust. That means thinking about the
-              whole system, not just the model.
+              on AI-native classification: services that help enterprises organize
+              and govern their data automatically. Most of the work isn't the model.
+              It's making the whole system dependable enough that teams can act on
+              what it tells them.
             </p>
             <p>
-              My work has covered the path from data ingestion to model training,
-              validation, and deployment. I focus on what it takes to turn those
-              pieces into something people can actually use.
+              Before that, I built the ML pipeline infrastructure behind those
+              models, including promotion gates that only ship a new model when it
+              beats the last known good one. It taught me to treat safeguards and
+              automation as part of the product, not an afterthought.
             </p>
             <p>
-              There's also a teaching chapter: leading programming labs, mentoring
-              teaching assistants, and helping students work through problems in
-              office hours. Alongside the systems I've built, that's part of the
-              experience I bring to a team.
+              I do my best work when I own a problem end to end: shaping the design,
+              working through trade-offs with product and partner teams, and helping
+              the people around me get up to speed. [TODO: one or two lines about you
+              outside work.]
             </p>
           </div>
           

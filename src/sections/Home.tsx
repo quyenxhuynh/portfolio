@@ -11,18 +11,18 @@ const Home: React.FC = () => {
           <h1 className="home__title">
             Hi, I'm <span className="home__name">Quyen Huynh.</span>
           </h1>
-          <p className="home__subtitle">An engineer with a teaching background.</p>
+          <p className="home__subtitle">I build AI systems that help enterprises classify and govern their data.</p>
           <p className="home__description">
-            At Microsoft, I build AI systems that help teams classify their data.
-            My work has also taken me into programming labs, office hours, and
-            mentoring other teaching assistants. This is a little of both sides of me.
+            At Microsoft, I work across the whole path, from the pipelines that
+            train and validate models to the multi-tenant services that put them
+            in front of customers. I'm at my best owning a system end to end.
           </p>
           <div className="home__cta">
             <a href="#projects" className="btn btn--primary">
               Explore my projects <span aria-hidden="true">&rarr;</span>
             </a>
             <a href="#about" className="btn btn--secondary">
-              A little about me
+              About me
             </a>
           </div>
           <ul className="home__links" aria-label="Find me online">

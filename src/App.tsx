@@ -1,15 +1,14 @@
-import { lazy, Suspense } from 'react';
+import { useEffect } from 'react';
 import Navigation from './components/Navigation';
+import Footer from './components/Footer';
 import Home from './sections/Home';
 import About from './sections/About';
+import Experience from './sections/Experience';
+import Teaching from './sections/Teaching';
+import Education from './sections/Education';
+import Projects from './sections/Projects';
 import type { NavItem } from './types';
 import './App.css';
-
-const Experience = lazy(() => import('./sections/Experience'));
-const Teaching = lazy(() => import('./sections/Teaching'));
-const Education = lazy(() => import('./sections/Education'));
-const Projects = lazy(() => import('./sections/Projects'));
-const Footer = lazy(() => import('./components/Footer'));
 
 const NAV_ITEMS: NavItem[] = [
   { id: 'home', label: 'Home', href: '#home' },
@@ -21,6 +20,14 @@ const NAV_ITEMS: NavItem[] = [
 ];
 
 function App() {
+  // The page renders after the browser's own hash jump, so jump to deep links here
+  useEffect(() => {
+    const sectionId = decodeURIComponent(window.location.hash.slice(1));
+    if (sectionId) {
+      document.getElementById(sectionId)?.scrollIntoView({ block: 'start' });
+    }
+  }, []);
+
   return (
     <div className="app">
       <a className="skip-link" href="#main-content">Skip to content</a>
@@ -28,16 +35,12 @@ function App() {
       <main id="main-content" tabIndex={-1}>
         <Home />
         <About />
-        <Suspense fallback={null}>
-          <Experience />
-          <Teaching />
-          <Education />
-          <Projects />
-        </Suspense>
+        <Experience />
+        <Teaching />
+        <Education />
+        <Projects />
       </main>
-      <Suspense fallback={null}>
-        <Footer />
-      </Suspense>
+      <Footer />
     </div>
   );
 }

@@ -68,27 +68,15 @@ const Navigation: React.FC<NavigationProps> = ({ items }) => {
       },
     );
 
-    const observedSections = new Set<HTMLElement>();
-    const observeSections = () => {
-      items.forEach((item) => {
-        const element = document.getElementById(item.id);
-        if (element && !observedSections.has(element)) {
-          observer.observe(element);
-          observedSections.add(element);
-        }
-      });
-    };
-
-    observeSections();
-    const contentObserver = new MutationObserver(observeSections);
-    const main = document.querySelector('main');
-    if (main) {
-      contentObserver.observe(main, { childList: true, subtree: true });
-    }
+    items.forEach((item) => {
+      const element = document.getElementById(item.id);
+      if (element) {
+        observer.observe(element);
+      }
+    });
 
     return () => {
       observer.disconnect();
-      contentObserver.disconnect();
     };
   }, [items]);
 

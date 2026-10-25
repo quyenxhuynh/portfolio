@@ -57,7 +57,7 @@ const Experience: React.FC = () => {
         </div>
         
         <div className="timeline">
-          {experiences.reverse().map((exp) => (
+          {[...experiences].reverse().map((exp) => (
             <div key={exp.id} className="timeline-item">
               <div className="timeline-marker"></div>
               <div className="timeline-content">

@@ -7,11 +7,3 @@ export const smoothScrollTo = (elementId: string) => {
     });
   }
 };
-
-export const debounce = (func: Function, delay: number) => {
-  let timeoutId: number;
-  return (...args: any[]) => {
-    clearTimeout(timeoutId);
-    timeoutId = setTimeout(() => func.apply(null, args), delay);
-  };
-};
